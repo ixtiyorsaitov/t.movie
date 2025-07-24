@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/theme-provider";
+import NextTopLoader from "nextjs-toploader";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -31,6 +32,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <NextTopLoader showSpinner={true} color="#e7bc0f" />
+
           {children}
         </ThemeProvider>
       </body>
