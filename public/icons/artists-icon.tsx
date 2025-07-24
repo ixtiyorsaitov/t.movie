@@ -1,6 +1,6 @@
 import React from "react";
 
-const ArtistIcon = ({ className }: { className: string }) => {
+const ArtistIcon = ({ className }: { className?: string }) => {
   return (
     <svg
       width="24"

@@ -1,31 +1,31 @@
 "use client";
 
-import { Wallet } from "lucide-react";
-import Link from "next/link";
 import React from "react";
-import { Button } from "../ui/button";
-import { cn } from "@/lib/utils";
-import Logo from "@/public/icons/Logo";
-import DiscoverIcon from "@/public/icons/discover-icon";
-import WatchListIcon from "@/public/icons/watchlist-icon";
-import BlogIcon from "@/public/icons/blog-icon";
-import ArtistIcon from "@/public/icons/artists-icon";
-import ContactUsIcon from "@/public/icons/contact-us-icon";
-import HelpCenterIcon from "@/public/icons/help-center-icon";
-import SettingIcon from "@/public/icons/setting-icon";
-import { usePathname } from "next/navigation";
-import { Separator } from "../ui/separator";
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  SidebarHeader,
+} from "../../ui/sidebar";
+import SidebarNavigations from "./sidebar-navigations";
 
-const Sidebar = () => {
-  const pathName = usePathname();
-
+const AppSidebar = () => {
   return (
-    <aside className="w-64 bg-neutral-900 border-r border-sidebar-border flex flex-col justify-between">
-      <div>
-        <div className="flex items-center justify-center gap-2 mb-8 mt-5 w-full">
-          <Logo />
-        </div>
-        <nav className="space-y-4">
+    <Sidebar collapsible="icon">
+      <SidebarHeader />
+      <SidebarContent>
+        <SidebarNavigations />
+      </SidebarContent>
+      <SidebarFooter />
+    </Sidebar>
+  );
+};
+
+export default AppSidebar;
+
+{
+  /*
+     <nav className="space-y-4">
           <div className="dark:text-neutral-600 text-muted-foreground text-sm mb-2 px-4">
             Menu
           </div>
@@ -85,67 +85,5 @@ const Sidebar = () => {
             );
           })}
         </nav>
-      </div>
-      <div className="p-4 bg-card rounded-lg text-center">
-        <p className="text-sm text-muted-foreground mb-3">
-          Click the button below to see the plans
-        </p>
-        <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-          <Wallet className="w-4 h-4 mr-2" />
-          see plans
-        </Button>
-      </div>
-    </aside>
-  );
-};
-
-export default Sidebar;
-
-const SIDEBAR_ITEMS = {
-  group1: [
-    {
-      id: 1,
-      name: "Discover",
-      icon: DiscoverIcon,
-      href: "/",
-    },
-    {
-      id: 2,
-      name: "Watchlist",
-      icon: WatchListIcon,
-      href: "/watchlist",
-    },
-    {
-      id: 3,
-      name: "Blog",
-      icon: BlogIcon,
-      href: "/blog",
-    },
-    {
-      id: 4,
-      name: "Artists",
-      icon: ArtistIcon,
-      href: "/artists",
-    },
-  ],
-  group2: [
-    {
-      id: 5,
-      name: "Contact Us",
-      icon: ContactUsIcon,
-      href: "contact-us",
-    },
-    {
-      id: 6,
-      name: "Help Center",
-      icon: HelpCenterIcon,
-      href: "/help-center",
-    },
-    {
-      id: 7,
-      name: "Setting",
-      icon: SettingIcon,
-      href: "/settings",
-    },
-  ],
-};
+    */
+}

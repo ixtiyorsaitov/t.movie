@@ -1,6 +1,6 @@
 import React from "react";
 
-const BlogIcon = ({ className }: { className: string }) => {
+const BlogIcon = ({ className }: { className?: string }) => {
   return (
     <svg
       width="24"

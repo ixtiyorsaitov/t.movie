@@ -1,6 +1,6 @@
 import React from "react";
 
-const WatchListIcon = ({ className }: { className: string }) => {
+const WatchListIcon = ({ className }: { className?: string }) => {
   return (
     <svg
       width="24"

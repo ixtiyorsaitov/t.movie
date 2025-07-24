@@ -1,6 +1,6 @@
 import React from "react";
 
-const ContactUsIcon = ({ className }: { className: string }) => {
+const ContactUsIcon = ({ className }: { className?: string }) => {
   return (
     <svg
       width="24"
