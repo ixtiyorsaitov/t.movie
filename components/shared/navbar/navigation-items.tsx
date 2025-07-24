@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { GENRES, NAVIGATION_ITEMS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const NavigationItems = () => {
   const queryParams = "all";
@@ -41,7 +42,7 @@ const NavigationItems = () => {
         })}
         <NavigationMenuItem>
           <NavigationMenuTrigger>Genres</NavigationMenuTrigger>
-          <NavigationMenuContent className="p-6 !rounded-2xl w-[400px] md:w-[500px] lg:w-[937px] !bg-black">
+          <NavigationMenuContent className="p-6 absolute !rounded-2xl w-[400px] md:w-[500px] lg:w-[937px] !bg-black">
             <div className="grid gap-5 md:grid-cols-5 w-full px-2">
               {GENRES.map((genre) => (
                 <Link
