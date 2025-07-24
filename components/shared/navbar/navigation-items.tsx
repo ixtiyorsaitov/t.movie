@@ -14,9 +14,12 @@ import {
 } from "@/components/ui/navigation-menu";
 import { GENRES, NAVIGATION_ITEMS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
-import { useIsMobile } from "@/hooks/use-mobile";
+import useResponsive from "@/hooks/use-responsive";
 
 const NavigationItems = () => {
+  const responsive1200 = useResponsive(1300);
+  const responsive1000 = useResponsive(1000);
+  const responsive767 = useResponsive(767);
   const queryParams = "all";
   return (
     <NavigationMenu viewport={false}>
@@ -40,10 +43,30 @@ const NavigationItems = () => {
             </NavigationMenuItem>
           );
         })}
-        <NavigationMenuItem>
+        <NavigationMenuItem className="relative !w-full">
           <NavigationMenuTrigger>Genres</NavigationMenuTrigger>
-          <NavigationMenuContent className="p-6 absolute !rounded-2xl w-[400px] md:w-[500px] lg:w-[937px] !bg-black">
-            <div className="grid gap-5 md:grid-cols-5 w-full px-2">
+          <NavigationMenuContent
+            className={cn(
+              "p-6 absolute !rounded-2xl  !bg-black"
+              // responsive1200 && !responsive1000
+              //   ? "w-[600px]"
+              //   : responsive1000 && !responsive767
+              //   ? "w-[400px]"
+              //   : responsive767
+              //   ? "left-1/2 -translate-x-1/2 !w-full"
+              //   : "w-[937px]"
+            )}
+          >
+            <div
+              className={cn(
+                "grid gap-5 w-full px-2",
+                responsive1200 && !responsive1000
+                  ? "grid-cols-4"
+                  : responsive1000
+                  ? "grid-cols-2"
+                  : "grid-cols-5"
+              )}
+            >
               {GENRES.map((genre) => (
                 <Link
                   href={`/filter?genre=${genre.id}`}
