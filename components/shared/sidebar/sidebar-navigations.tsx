@@ -29,15 +29,18 @@ const SidebarNavigations = () => {
               <SidebarMenuItem
                 key={item.id}
                 className={cn(
-                  "flex items-center relative gap-3 px-4 py-2",
+                  "flex items-center relative gap-3 px-4 py-2 hover:bg-sidebar-accent",
                   isActive
                     ? "text-primary-500 font-medium"
                     : " transition-colors"
                 )}
               >
-                <SidebarMenuButton asChild>
+                <SidebarMenuButton
+                  asChild
+                  className="text-lg rounded-none hover:bg-transparent"
+                >
                   <Link href={item.href}>
-                    <item.icon className="fill-red" />
+                    <item.icon className="fill-red !w-5 !h-5" />
                     <span>{item.name}</span>
                   </Link>
                 </SidebarMenuButton>
