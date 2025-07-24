@@ -8,15 +8,23 @@ import {
   SidebarHeader,
 } from "../../ui/sidebar";
 import SidebarNavigations from "./sidebar-navigations";
+import SidebarBottom from "./sidebar-footer";
+import SidebarTop from "./sidebar-header";
+import { SidebarToggleButton } from "./sidebar-toggle-button";
 
 const AppSidebar = () => {
   return (
     <Sidebar collapsible="icon">
-      <SidebarHeader />
+      <SidebarHeader>
+        <SidebarTop />
+      </SidebarHeader>
+      <SidebarToggleButton />
       <SidebarContent>
         <SidebarNavigations />
       </SidebarContent>
-      <SidebarFooter />
+      <SidebarFooter>
+        <SidebarBottom />
+      </SidebarFooter>
     </Sidebar>
   );
 };
