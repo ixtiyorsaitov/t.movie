@@ -6,10 +6,7 @@ const BrowseLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <SidebarProvider>
       <AppSidebar />
-      <main>
-        <SidebarTrigger />
-        {children}
-      </main>
+      <main>{children}</main>
     </SidebarProvider>
   );
 };
