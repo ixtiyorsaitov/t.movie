@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         suppressHydrationWarning
-        className={`${poppins.variable} ${poppins.variable} ${poppins.className} antialiased`}
+        className={`${poppins.variable} ${poppins.variable} ${poppins.className} antialiased dark:bg-neutral-900`}
       >
         <ThemeProvider
           attribute="class"

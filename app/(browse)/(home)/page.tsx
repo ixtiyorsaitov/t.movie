@@ -31,7 +31,7 @@ export default function MovieDashboard() {
       {/* Main Content Area */}
       <main className="flex-1 p-8 overflow-auto">
         {/* Top Navigation */}
-        <div className="flex items-center justify-between mb-8">
+        {/* <div className="flex items-center justify-between mb-8">
           <div className="flex items-center gap-4">
             <Button
               variant="ghost"
@@ -111,10 +111,10 @@ export default function MovieDashboard() {
               <AvatarFallback>U</AvatarFallback>
             </Avatar>
           </div>
-        </div>
+        </div> */}
 
         {/* Hero Section */}
-        <div className="relative w-full h-[400px] rounded-xl overflow-hidden mb-8">
+        {/* <div className="relative w-full h-[400px] rounded-xl overflow-hidden mb-8">
           <Image
             src="/placeholder.svg?height=400&width=1200"
             alt="Game of Thrones"
@@ -171,10 +171,10 @@ export default function MovieDashboard() {
               <ChevronRight className="w-5 h-5" />
             </Button>
           </div>
-        </div>
+        </div> */}
 
         {/* Recommended For You Section */}
-        <div className="flex items-center justify-between mb-6">
+        {/* <div className="flex items-center justify-between mb-6">
           <h3 className="text-2xl font-bold">Recommended For You</h3>
           <Link
             href="#"
@@ -183,8 +183,8 @@ export default function MovieDashboard() {
           >
             View All <ChevronRight className="w-4 h-4" />
           </Link>
-        </div>
-        <div className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide">
+        </div> */}
+        {/* <div className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide">
           {[
             {
               title: "Hotel Transylvania",
@@ -255,11 +255,11 @@ export default function MovieDashboard() {
               </CardContent>
             </Card>
           ))}
-        </div>
+        </div> */}
       </main>
 
       {/* Right News Panel */}
-      <aside className="w-80 bg-sidebar p-6 border-l border-sidebar-border flex-shrink-0">
+      {/* <aside className="w-80 bg-sidebar p-6 border-l border-sidebar-border flex-shrink-0">
         <Card className="bg-card border-primary border-2 rounded-xl overflow-hidden h-full flex flex-col">
           <CardContent className="p-0">
             <Image
@@ -290,7 +290,7 @@ export default function MovieDashboard() {
             </div>
           </CardContent>
         </Card>
-      </aside>
+      </aside> */}
     </>
   );
 }
