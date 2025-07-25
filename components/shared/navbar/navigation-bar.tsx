@@ -10,14 +10,13 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Input } from "@/components/ui/input";
 import { useSidebar } from "@/components/ui/sidebar";
 import CommentIcon from "@/public/icons/comment-icon";
 import EditUserIcon from "@/public/icons/edit-user-icon";
 import ReelsIcon from "@/public/icons/reels-icon";
-import SearchIcon from "@/public/icons/search-icon";
 import ShopAddIcon from "@/public/icons/shop-add-icon";
 import Notifications from "./notifications";
+import SearchBox from "./search";
 
 const NavigationBar = () => {
   const { toggleSidebar } = useSidebar();
@@ -27,20 +26,7 @@ const NavigationBar = () => {
       {/* <Button variant={"ghost"} onClick={toggleSidebar}>
         <PanelLeftIcon className="size-6" />
       </Button> */}
-      {/* Search box */}
-      <div className="flex items-center justify-center">
-        <Button
-          variant={"ghost"}
-          className="bg-[#111111] rounded-r-none h-11"
-          size={"icon"}
-        >
-          <SearchIcon className="relative left-1" />
-        </Button>
-        <Input
-          className="!bg-[#111111] w-[222px] h-11 rounded-l-none focus-visible:ring-0 border-none shadow-none"
-          placeholder="Search the series, movies..."
-        />
-      </div>
+      <SearchBox />
 
       <Notifications />
 
@@ -52,7 +38,7 @@ const NavigationBar = () => {
               <AvatarFallback className="bg-primary-500">CN</AvatarFallback>
             </Avatar>
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="relative w-[234px] px-2 -left-2 bg-[#010101]">
+          <DropdownMenuContent className="relative w-[234px] px-2 -left-2 bg-[#010101] rounded-xl">
             <DropdownMenuLabel className="w-full flex items-center justify-start gap-2">
               <div className="w-12 h-12">
                 <Avatar className="w-full h-full">
@@ -90,15 +76,3 @@ const NavigationBar = () => {
 };
 
 export default NavigationBar;
-
-// const { mutate, isPending } = useMutation({
-//     mutationFn: async () => {
-//       const { data } = await axios.get<{ datas: INotification[] }>(
-//         "/api/auth/verify"
-//       );
-//       return data;
-//     },
-//     onSuccess: ({ datas }) => {
-//       setNotifications(datas);
-//     },
-//   });

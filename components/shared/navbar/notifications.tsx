@@ -18,12 +18,15 @@ import { INotification } from "@/types";
 import NotificationCardSkeleton from "./notification-card/skeleton";
 
 const Notifications = () => {
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(true);
   const [notifications, setNotifications] = useState<INotification[]>([]);
   const [isNotificationOpen, setIsNotificationOpen] = useState<boolean>(false);
   useEffect(() => {
     if (isNotificationOpen && notifications.length === 0) {
-      // Get datas from api
+      setTimeout(() => {
+        setLoading(false);
+        setNotifications(NOTIFICATIONS);
+      }, 1000);
     }
   }, [isNotificationOpen]);
   return (
@@ -69,3 +72,15 @@ const Notifications = () => {
 };
 
 export default Notifications;
+
+// const { mutate, isPending } = useMutation({
+//     mutationFn: async () => {
+//       const { data } = await axios.get<{ datas: INotification[] }>(
+//         "/api/auth/verify"
+//       );
+//       return data;
+//     },
+//     onSuccess: ({ datas }) => {
+//       setNotifications(datas);
+//     },
+//   });
