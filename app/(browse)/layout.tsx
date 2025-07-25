@@ -10,7 +10,9 @@ const BrowseLayout = ({ children }: { children: React.ReactNode }) => {
 
       <main className="px-3 w-full">
         <Navbar />
-        {children}
+        <div className="w-full flex items-center justify-center">
+          {children}
+        </div>
       </main>
     </SidebarProvider>
   );
