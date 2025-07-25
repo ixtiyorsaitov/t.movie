@@ -164,3 +164,16 @@
     z-index: 20;
   }
 }
+.animation-popover {
+  animation: 0.5s animate-popover;
+}
+@keyframes animate-popover {
+  0% {
+    opacity: 0;
+    top: 10px;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}

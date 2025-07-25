@@ -39,7 +39,7 @@ const ReelsIcon = ({ className }: { className?: string }) => {
         d="M7.99414 10.8376V9.93759C7.99414 8.78259 8.81164 8.31009 9.80914 8.88759L10.5891 9.33759L11.3691 9.78759C12.3666 10.3651 12.3666 11.3101 11.3691 11.8876L10.5891 12.3376L9.80914 12.7876C8.81164 13.3651 7.99414 12.8926 7.99414 11.7376V10.8376V10.8376Z"
         stroke="#CCCCCC"
         strokeWidth="1.5"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         strokeLinecap="round"
         strokeLinejoin="round"
       />

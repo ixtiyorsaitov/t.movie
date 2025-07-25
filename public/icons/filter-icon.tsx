@@ -21,7 +21,7 @@ const FilterIcon = ({ className }: { className?: string }) => {
         d="M14.7734 17.4585V13.8835"
         stroke="#CCCCCC"
         strokeWidth="0.916667"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -29,7 +29,7 @@ const FilterIcon = ({ className }: { className?: string }) => {
         d="M14.7734 7.32925V5.54175"
         stroke="#CCCCCC"
         strokeWidth="0.916667"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -37,7 +37,7 @@ const FilterIcon = ({ className }: { className?: string }) => {
         d="M14.774 12.0958C16.0902 12.0958 17.1573 11.0287 17.1573 9.71244C17.1573 8.39616 16.0902 7.3291 14.774 7.3291C13.4577 7.3291 12.3906 8.39616 12.3906 9.71244C12.3906 11.0287 13.4577 12.0958 14.774 12.0958Z"
         stroke="#CCCCCC"
         strokeWidth="0.916667"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -45,7 +45,7 @@ const FilterIcon = ({ className }: { className?: string }) => {
         d="M8.22656 17.4584V15.6709"
         stroke="#CCCCCC"
         strokeWidth="0.916667"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -53,7 +53,7 @@ const FilterIcon = ({ className }: { className?: string }) => {
         d="M8.22656 9.11675V5.54175"
         stroke="#CCCCCC"
         strokeWidth="0.916667"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
