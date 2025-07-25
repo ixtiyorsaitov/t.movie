@@ -5,6 +5,7 @@ import DiscoverIcon from "@/public/icons/discover-icon";
 import HelpCenterIcon from "@/public/icons/help-center-icon";
 import SettingIcon from "@/public/icons/setting-icon";
 import WatchListIcon from "@/public/icons/watchlist-icon";
+import { FilmType, IFilm, INotification } from "@/types";
 
 export const SIDEBAR_ITEMS = {
   group1: [
@@ -70,6 +71,296 @@ export const NAVIGATION_ITEMS = [
     id: 3,
     name: "Series",
     type: "series",
+  },
+];
+
+export const NOTIFICATIONS: INotification[] = [
+  {
+    _id: "1",
+    film: {
+      _id: "1",
+      title: "Attack on Titan",
+      description:
+        "In a world where humanity is on the brink of extinction from Titans, Eren and his friends fight back.",
+      type: FilmType.SERIES,
+      rating: {
+        avarage: 8.9,
+        total: 4450,
+        count: 500,
+      },
+      meta: {
+        likes: 1200,
+        watchList: 350,
+      },
+      slug: "attack-on-titan",
+      published: true,
+      image: "/assets/aot.jpg",
+      additionImages: ["/assets/aot1.jpg", "/assets/aot2.jpg"],
+      backgroundImage: "/assets/aot-bg.jpg",
+      genres: [
+        {
+          id: 1,
+          name: "Action",
+          slug: "action",
+        },
+        {
+          id: 17,
+          name: "Drama",
+          slug: "drama",
+        },
+      ],
+    },
+    episode: 4,
+    season: 3,
+    read: false,
+  },
+  {
+    _id: "2",
+    film: {
+      _id: "2",
+      title: "Jujutsu Kaisen",
+      description:
+        "A high school student joins a secret organization to fight curses and save people from supernatural threats.",
+      type: FilmType.SERIES,
+      rating: {
+        avarage: 8.7,
+        total: 3900,
+        count: 450,
+      },
+      meta: {
+        likes: 950,
+        watchList: 410,
+      },
+      slug: "jujutsu-kaisen",
+      published: true,
+      image: "/assets/jjk.jpg",
+      additionImages: ["/assets/jjk1.jpg"],
+      backgroundImage: "/assets/jjk-bg.jpg",
+      genres: [
+        {
+          id: 1,
+          name: "Action",
+          slug: "action",
+        },
+        {
+          id: 11,
+          name: "Animation",
+          slug: "animation",
+        },
+      ],
+    },
+    episode: 7,
+    season: 2,
+    read: false,
+  },
+  {
+    _id: "3",
+    film: {
+      _id: "3",
+      title: "Demon Slayer",
+      description:
+        "Tanjiro Kamado becomes a demon slayer after demons attack his family.",
+      type: FilmType.SERIES,
+      rating: {
+        avarage: 8.6,
+        total: 3600,
+        count: 420,
+      },
+      meta: {
+        likes: 1120,
+        watchList: 500,
+      },
+      slug: "demon-slayer",
+      published: true,
+      image: "/assets/demonslayer.jpg",
+      backgroundImage: "/assets/demonslayer-bg.jpg",
+      genres: [
+        {
+          id: 3,
+          name: "Fantasy",
+          slug: "fantasy",
+        },
+        {
+          id: 6,
+          name: "Adventure",
+          slug: "adventure",
+        },
+      ],
+    },
+    episode: 10,
+    season: 1,
+    read: true,
+  },
+  {
+    _id: "4",
+    film: {
+      _id: "4",
+      title: "One Piece",
+      description:
+        "Monkey D. Luffy sails the Grand Line in search of the ultimate treasure, the One Piece.",
+      type: FilmType.SERIES,
+      rating: {
+        avarage: 9.1,
+        total: 6200,
+        count: 700,
+      },
+      meta: {
+        likes: 2000,
+        watchList: 600,
+      },
+      slug: "one-piece",
+      published: true,
+      image: "/assets/onepiece.jpg",
+      backgroundImage: "/assets/onepiece-bg.jpg",
+      genres: [
+        {
+          id: 6,
+          name: "Adventure",
+          slug: "adventure",
+        },
+        {
+          id: 2,
+          name: "Comedy",
+          slug: "comedy",
+        },
+      ],
+    },
+    episode: 568,
+    season: 1,
+    read: true,
+  },
+];
+
+export const FILMS: IFilm[] = [
+  {
+    _id: "1",
+    title: "Attack on Titan",
+    description:
+      "In a world where humanity is on the brink of extinction from Titans, Eren and his friends fight back.",
+    type: FilmType.SERIES,
+    rating: {
+      avarage: 8.9,
+      total: 4450,
+      count: 500,
+    },
+    meta: {
+      likes: 1200,
+      watchList: 350,
+    },
+    slug: "attack-on-titan",
+    published: true,
+    image: "/assets/aot.jpg",
+    additionImages: ["/assets/aot1.jpg", "/assets/aot2.jpg"],
+    backgroundImage: "/assets/aot-bg.jpg",
+    genres: [
+      {
+        id: 1,
+        name: "Action",
+        slug: "action",
+      },
+      {
+        id: 17,
+        name: "Drama",
+        slug: "drama",
+      },
+    ],
+  },
+  {
+    _id: "2",
+    title: "Jujutsu Kaisen",
+    description:
+      "A high school student joins a secret organization to fight curses and save people from supernatural threats.",
+    type: FilmType.SERIES,
+    rating: {
+      avarage: 8.7,
+      total: 3900,
+      count: 450,
+    },
+    meta: {
+      likes: 950,
+      watchList: 410,
+    },
+    slug: "jujutsu-kaisen",
+    published: true,
+    image: "/assets/jjk.jpg",
+    additionImages: ["/assets/jjk1.jpg"],
+    backgroundImage: "/assets/jjk-bg.jpg",
+    genres: [
+      {
+        id: 1,
+        name: "Action",
+        slug: "action",
+      },
+      {
+        id: 11,
+        name: "Animation",
+        slug: "animation",
+      },
+    ],
+  },
+  {
+    _id: "3",
+    title: "Demon Slayer",
+    description:
+      "Tanjiro Kamado becomes a demon slayer after demons attack his family.",
+    type: FilmType.SERIES,
+    rating: {
+      avarage: 8.6,
+      total: 3600,
+      count: 420,
+    },
+    meta: {
+      likes: 1120,
+      watchList: 500,
+    },
+    slug: "demon-slayer",
+    published: true,
+    image: "/assets/demonslayer.jpg",
+    backgroundImage: "/assets/demonslayer-bg.jpg",
+    genres: [
+      {
+        id: 3,
+        name: "Fantasy",
+        slug: "fantasy",
+      },
+      {
+        id: 6,
+        name: "Adventure",
+        slug: "adventure",
+      },
+    ],
+  },
+  {
+    _id: "4",
+    title: "One Piece",
+    description:
+      "Monkey D. Luffy sails the Grand Line in search of the ultimate treasure, the One Piece.",
+    type: FilmType.SERIES,
+    rating: {
+      avarage: 9.1,
+      total: 6200,
+      count: 700,
+    },
+    meta: {
+      likes: 2000,
+      watchList: 600,
+    },
+    slug: "one-piece",
+    published: true,
+    image: "/assets/onepiece.jpg",
+    backgroundImage: "/assets/onepiece-bg.jpg",
+    genres: [
+      {
+        id: 6,
+        name: "Adventure",
+        slug: "adventure",
+      },
+      {
+        id: 2,
+        name: "Comedy",
+        slug: "comedy",
+      },
+    ],
   },
 ];
 

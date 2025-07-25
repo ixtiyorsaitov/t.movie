@@ -7,7 +7,7 @@ import React from "react";
 const SidebarBottom = () => {
   const { state, isMobile } = useSidebar();
 
-  const isCollapsed = state === "collapsed" || isMobile;
+  const isCollapsed = state === "collapsed";
 
   return (
     <div className="w-full flex items-center justify-center mb-4">
@@ -15,9 +15,7 @@ const SidebarBottom = () => {
         className={cn(
           "flex flex-col items-center justify-center gap-y-3 rounded-2xl py-4 shadow-[0_0_20px_rgba(250,204,21,0.15)]",
           "mask-gradient-border",
-          state === "collapsed" || isMobile
-            ? ""
-            : "border border-neutral-700 px-6"
+          state === "collapsed" ? "" : "border border-neutral-700 px-6"
         )}
       >
         {!isCollapsed && (
