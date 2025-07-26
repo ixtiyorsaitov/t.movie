@@ -40,13 +40,13 @@ const Notifications = () => {
           <NotificationIcon className="!w-7 !h-7" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="relative w-116 pt-4 pb-0 -left-15 bg-[#010101] px-8">
+      <DropdownMenuContent className="relative w-116 pt-4 pb-0 -left-15 bg-popover px-8">
         <DropdownMenuLabel className="w-full flex items-center justify-between">
           <p>Notifications</p>
           <SettingIcon variant={"outline"} />
         </DropdownMenuLabel>
         <DropdownMenuSeparator className="mb-3" />
-        <div className="w-full h-full max-h-100 overflow-auto scrollbar-thin scrollbar-thumb-primary-500 scrollbar-track-[#010101]">
+        <div className="w-full h-full max-h-100 overflow-auto scrollbar-thin scrollbar-thumb-primary-500 scrollbar-track-popover">
           {loading
             ? Array.from({ length: 3 }).map((_, i) => (
                 <NotificationCardSkeleton key={i} />
@@ -56,7 +56,7 @@ const Notifications = () => {
               ))}
         </div>
 
-        <div className="w-full pt-4 pb-2 sticky b-0 bg-[#010101] h-ull flex items-center justify-center">
+        <div className="w-full pt-4 pb-2 sticky b-0 bg-popover h-ull flex items-center justify-center">
           {loading ? (
             <div className="w-[150px] dark:bg-primary-900 rounded-full h-10 animate-pulse" />
           ) : (

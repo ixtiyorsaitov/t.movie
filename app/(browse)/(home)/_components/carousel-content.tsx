@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import CustomImage from "@/components/ui/custom-image";
 import StarIcon from "@/public/icons/star-icon";
 import { ChevronLeft, ChevronRight, Film, Play } from "lucide-react";
 import Image from "next/image";
@@ -6,16 +7,17 @@ import React from "react";
 
 const CarouselContent = () => {
   return (
-    <div className="relative w-full h-full rounded-xl">
-      <Image
+    <div className="relative w-full h-full overflow-hidden text-white">
+      <CustomImage
         src="/assests/aot-bg.jpg"
         alt="Game of Thrones"
-        layout="fill"
-        objectFit="cover"
-        className="brightness-75"
+        fill
+        // layout="fill"
+        // objectFit="cover"
+        className="brightness-75 object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent p-8 flex flex-col justify-end">
-        <h2 className="text-4xl font-bold mb-2 max-w-2xl line-clamp-2">
+      <div className="absolute inset-0 bg-gradient-to-r dark:from-black/70 from-black/30 to-transparent p-8 flex flex-col justify-end">
+        <h2 className="text-4xl font-bold mb-2 max-w-2xl line-clamp-2 font-baloo2">
           Game of Thrones
         </h2>
         <div className="flex items-center gap-4 text-sm mb-4">
@@ -31,7 +33,7 @@ const CarouselContent = () => {
             <span>Drama</span>
           </div>
         </div>
-        <p className="max-w-lg text-foreground mb-6 text-sm line-clamp-4">
+        <p className="max-w-lg mb-6 text-sm line-clamp-4">
           It&apos;s the story of the intricate and bloody battles of several
           noble families in the fictional land of Westeros. These families,
           including the Starks, the Lannisters, and the Targaryens, fight for
@@ -51,14 +53,6 @@ const CarouselContent = () => {
             Trailer
           </Button>
         </div>
-      </div>
-      <div className="absolute bottom-8 right-8 flex gap-2">
-        <Button size="icon" className="rounded-full">
-          <ChevronLeft className="w-5 h-5" />
-        </Button>
-        <Button size="icon" className="rounded-full">
-          <ChevronRight className="w-5 h-5" />
-        </Button>
       </div>
     </div>
   );

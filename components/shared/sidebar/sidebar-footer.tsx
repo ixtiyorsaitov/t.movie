@@ -19,7 +19,7 @@ const SidebarBottom = () => {
         )}
       >
         {!isCollapsed && (
-          <p className="text-center text-sm text-neutral-100">
+          <p className="text-center text-sm dark:text-neutral-100 text-neutral-600">
             Click the button below <br /> to see the plans
           </p>
         )}

@@ -22,15 +22,15 @@ const NotificationCard = ({ data, index }: Props) => {
       <div
         className={cn(
           "w-full rounded-xl overflow-hidden flex items-center justify-start gap-4",
-          !disabled ? "bg-primary-900" : ""
+          !disabled ? "dark:bg-primary-700/50 bg-primary-700/10 transition" : ""
         )}
       >
-        <div className="w-24 h-32 relative">
+        <div className="w-24 h-32 relative rounded-xl overflow-hidden">
           <Image
             src={"/assests/aot.png"}
             alt="Attack on titan"
             fill
-            className="object-cover rounded-xl hover:scale-110 transition"
+            className="object-cover hover:scale-110 transition"
           />
         </div>
         <div className="">

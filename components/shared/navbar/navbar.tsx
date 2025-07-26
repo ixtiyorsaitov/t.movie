@@ -6,6 +6,7 @@ const Navbar = () => {
   return (
     <div className="w-full flex items-center justify-between mt-4">
       <NavigationItems />
+
       <NavigationBar />
     </div>
   );

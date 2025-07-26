@@ -17,17 +17,17 @@ export function SidebarToggleButton() {
     >
       <button
         className={cn(
-          "border w-8 absolute bg-neutral-900",
+          "border w-8 absolute dark:bg-neutral-900 bg-white",
           state === "collapsed"
-            ? "right-[-30px] rounded-r-lg border-l-neutral-900"
-            : "right-[-1px] rounded-l-lg border-r-neutral-900"
+            ? "right-[-30px] rounded-r-lg dark:border-l-neutral-900 border-l-sidebar bg-sidebar"
+            : "right-[-1px] rounded-l-lg dark:border-r-neutral-900 border-r-white"
         )}
         aria-label="Toggle Sidebar"
       >
         <ChevronLeft
           size={40}
           className={cn(
-            "relative -left-1 transition",
+            "relative -left-1 transition dark:text-white text-neutral-500",
             state === "collapsed" ? "rotate-180" : "rotate-360"
           )}
         />

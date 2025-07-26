@@ -48,20 +48,20 @@ const SearchBox = () => {
       <div className="flex items-center justify-center">
         <Button
           variant={"ghost"}
-          className="bg-black rounded-r-none rounded-l-xl h-11 w-11"
+          className="bg-popover rounded-r-none rounded-l-xl h-11 w-11"
           size={"icon"}
         >
           <SearchIcon className="relative left-1" />
         </Button>
         <Input
-          className="!bg-black w-[222px] h-11 rounded-none focus-visible:ring-0 border-none shadow-none"
+          className="!bg-popover w-[222px] h-11 rounded-none focus-visible:ring-0 border-none shadow-none"
           placeholder="Search the series, movies..."
           onFocus={() => setSearchPopover(true)}
           onChange={handleSearchDebounce}
         />
         <Button
           variant={"ghost"}
-          className="bg-black rounded-l-none rounded-r-xl h-11 w-11"
+          className="bg-popover rounded-l-none rounded-r-xl h-11 w-11"
           size={"icon"}
         >
           <FilterIcon className="relative right-1 !w-5 !h-5" />

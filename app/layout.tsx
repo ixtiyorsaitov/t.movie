@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Poppins, Baloo_2 } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import NextTopLoader from "nextjs-toploader";
@@ -8,6 +8,11 @@ const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
+});
+const baloo_2 = Baloo_2({
+  variable: "--font-baloo2",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -24,7 +29,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         suppressHydrationWarning
-        className={`${poppins.variable} ${poppins.variable} ${poppins.className} selection:bg-primary-500 selection:text-neutral-900 antialiased dark:bg-neutral-900`}
+        className={`${poppins.variable} ${poppins.variable} ${poppins.className} ${baloo_2.style} ${baloo_2.variable} selection:bg-primary-500 selection:text-neutral-900 antialiased dark:bg-neutral-900`}
       >
         <ThemeProvider
           attribute="class"

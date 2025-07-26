@@ -33,7 +33,7 @@ const SidebarNavigations = () => {
                   className={cn(
                     "flex items-center relative gap-3 px-4 py-2 hover:bg-sidebar-accent",
                     isActive
-                      ? "text-primary-500 font-medium"
+                      ? "text-primary font-medium hover:text-primary"
                       : " transition-colors"
                   )}
                 >

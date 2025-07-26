@@ -17,6 +17,7 @@ import ReelsIcon from "@/public/icons/reels-icon";
 import ShopAddIcon from "@/public/icons/shop-add-icon";
 import Notifications from "./notifications";
 import SearchBox from "./search";
+import { ModeToggle } from "@/components/ui/theme-toggle";
 
 const NavigationBar = () => {
   const { toggleSidebar } = useSidebar();
@@ -27,23 +28,28 @@ const NavigationBar = () => {
         <PanelLeftIcon className="size-6" />
       </Button> */}
       <SearchBox />
+      <ModeToggle />
 
       <Notifications />
 
-      <div className="flex items-center justify-center p-[0.5px] relative w-12 h-12 border-2 border-primary-500 rounded-full">
+      <div className="flex items-center justify-center p-[0.5px] relative w-12 h-12 border-2 border-primary rounded-full">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Avatar className="w-full h-full">
               <AvatarImage src="https://github.com/shadcn.png" />
-              <AvatarFallback className="bg-primary-500">CN</AvatarFallback>
+              <AvatarFallback className="bg-primary-500 dark:text-black text-white">
+                CN
+              </AvatarFallback>
             </Avatar>
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="relative w-[234px] px-2 -left-2 bg-[#010101] rounded-xl">
+          <DropdownMenuContent className="relative w-[234px] px-2 -left-2 bg-popover rounded-xl">
             <DropdownMenuLabel className="w-full flex items-center justify-start gap-2">
               <div className="w-12 h-12">
                 <Avatar className="w-full h-full">
                   <AvatarImage src="https://github.com/shadcn.png" />
-                  <AvatarFallback className="bg-primary-500">CN</AvatarFallback>
+                  <AvatarFallback className="bg-primary-500 dark:text-black text-white">
+                    CN
+                  </AvatarFallback>
                 </Avatar>
               </div>
               <h1 className="text-xl">Ixtiyor</h1>

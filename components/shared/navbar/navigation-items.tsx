@@ -58,7 +58,7 @@ const NavigationItems = () => {
             <NavigationMenuTrigger>Genres</NavigationMenuTrigger>
             <NavigationMenuContent
               className={cn(
-                "p-6 absolute !rounded-2xl  !bg-black",
+                "p-6 absolute !rounded-2xl  !bg-popover z-[999]",
                 responsive1200 && !responsive1000
                   ? "!w-[600px]"
                   : responsive1000 && !responsive767
