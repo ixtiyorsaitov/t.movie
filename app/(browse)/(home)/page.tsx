@@ -39,6 +39,9 @@ export default function MovieDashboard() {
           </div>
           <div className="w-full flex items-centere justify-center gap-2">
             <MovieCard />
+            <MovieCard />
+            <MovieCard />
+            <MovieCard />
           </div>
         </div>
       </main>

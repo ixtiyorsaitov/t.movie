@@ -1,12 +1,29 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import CustomImage from "@/components/ui/custom-image";
 import HeartIcon from "@/public/icons/heart-icon";
 import StarIcon from "@/public/icons/star-icon";
 import "./movie-card.css";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { cn } from "@/lib/utils";
 
 const MovieCard = () => {
+  const router = useRouter();
+  const [isLiked, setIsLiked] = useState(false);
+  const handleLike = () => {
+    try {
+      setIsLiked((prev) => !prev);
+    } catch (error) {}
+  };
+
+  const handleRoute = () => {};
   return (
-    <div className="w-[193px] h-[262px] p-2 bg-neutral-800 rounded-3xl">
+    <div
+      onClick={handleRoute}
+      className="w-full h-[300px] p-2 bg-neutral-800 rounded-3xl"
+    >
       <div className="w-full h-full overflow-hidden rounded-2xl relative image-div">
         <CustomImage
           src={"/assests/aot.png"}
@@ -25,8 +42,16 @@ const MovieCard = () => {
             </div>
             <Button
               variant={"ghost"}
-              className="bg-neutral-800 size-6 mr-2 rounded-md"
+              className={cn(
+                "bg-neutral-800 size-6 mr-2 rounded-md",
+                isLiked ? "text-red-500 hover:text-red-500" : ""
+              )}
               size={"icon"}
+              onClick={(e) => {
+                e.stopPropagation();
+                e.preventDefault();
+                handleLike();
+              }}
             >
               <HeartIcon />
             </Button>
