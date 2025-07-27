@@ -20,7 +20,7 @@ const FilmPage = () => {
         {loading ? <MainDetailsSkeleton /> : <MainDetails />}
       </div>
       <div className="w-full px-3 flex items-center justify-center flex-col">
-        <InformationFilm />
+        {/* <InformationFilm /> */}
         <EpisodesFilm />
         <ReviewsFilm />
       </div>
