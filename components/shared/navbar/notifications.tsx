@@ -16,11 +16,15 @@ import NotificationCard from "./notification-card";
 import { Trash2 } from "lucide-react";
 import { INotification } from "@/types";
 import NotificationCardSkeleton from "./notification-card/skeleton";
+import useResponsive from "@/hooks/use-responsive";
+import { cn } from "@/lib/utils";
 
 const Notifications = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [notifications, setNotifications] = useState<INotification[]>([]);
   const [isNotificationOpen, setIsNotificationOpen] = useState<boolean>(false);
+  const responsive600 = useResponsive(600);
+  const responsive440 = useResponsive(440);
   useEffect(() => {
     if (isNotificationOpen && notifications.length === 0) {
       setTimeout(() => {
@@ -40,7 +44,16 @@ const Notifications = () => {
           <NotificationIcon className="!w-7 !h-7" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="relative w-116 pt-4 pb-0 -left-15 bg-popover px-8">
+      <DropdownMenuContent
+        className={cn(
+          "relative pt-4 pb-0 bg-popover top-1",
+          responsive600 && !responsive440
+            ? "w-100 -left-5 px-2"
+            : responsive440
+            ? "w-90"
+            : "w-116 -left-15 px-8"
+        )}
+      >
         <DropdownMenuLabel className="w-full flex items-center justify-between">
           <p>Notifications</p>
           <SettingIcon variant={"outline"} />

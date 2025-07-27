@@ -6,6 +6,7 @@ const ReelsIcon = ({ className }: { className?: string }) => {
       height="18"
       viewBox="0 0 19 18"
       fill="none"
+      className={className}
     >
       <path
         d="M17.1816 11.25V6.75C17.1816 3 15.6816 1.5 11.9316 1.5H7.43164C3.68164 1.5 2.18164 3 2.18164 6.75V11.25C2.18164 15 3.68164 16.5 7.43164 16.5H11.9316C15.6816 16.5 17.1816 15 17.1816 11.25Z"

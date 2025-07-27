@@ -11,14 +11,26 @@ import { IFilm } from "@/types";
 import SearchResultCardSkeleton from "./loading";
 import { debounce } from "lodash";
 import DropDownArrow from "@/public/icons/dropdown-arrow";
+import useResponsive from "@/hooks/use-responsive";
+import { MOBILE_BREAKPOINT } from "@/hooks/use-mobile";
+import { cn } from "@/lib/utils";
 
-const SearchBox = () => {
+interface Props {
+  autoFocus?: boolean;
+}
+
+const SearchBox = ({ autoFocus = false }: Props) => {
   const [loading, setLoading] = useState<boolean>(true);
   const [searchPopover, setSearchPopover] = useState<boolean>(false);
   const [recommended, setRecommended] = useState<IFilm[]>([]);
   const [result, setResult] = useState<IFilm[]>([]);
+  const responsive = useResponsive(MOBILE_BREAKPOINT);
   const wrapperRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   useEffect(() => {
+    if (autoFocus) {
+      inputRef.current?.focus();
+    }
     setTimeout(() => {
       setRecommended(FILMS);
       setLoading(false);
@@ -44,8 +56,13 @@ const SearchBox = () => {
   const handleSearchDebounce = useCallback(debounce(onInputChange, 300), []);
 
   return (
-    <div className="relative" ref={wrapperRef}>
-      <div className="flex items-center justify-center">
+    <div className={cn("relative", responsive && "w-full")} ref={wrapperRef}>
+      <div
+        className={cn(
+          "flex items-center justify-center",
+          responsive && "w-full"
+        )}
+      >
         <Button
           variant={"ghost"}
           className="bg-popover rounded-r-none rounded-l-xl h-11 w-11"
@@ -54,10 +71,14 @@ const SearchBox = () => {
           <SearchIcon className="relative left-1" />
         </Button>
         <Input
-          className="!bg-popover w-[222px] h-11 rounded-none focus-visible:ring-0 border-none shadow-none"
+          className={cn(
+            "!bg-popover h-11 rounded-none focus-visible:ring-0 border-none shadow-none",
+            responsive ? "w-full" : "w-[222px]"
+          )}
           placeholder="Search the series, movies..."
           onFocus={() => setSearchPopover(true)}
           onChange={handleSearchDebounce}
+          ref={inputRef}
         />
         <Button
           variant={"ghost"}
@@ -69,9 +90,9 @@ const SearchBox = () => {
       </div>
       {searchPopover && (
         <div className="absolute w-full right-0">
-          <div className="w-full bg-black mt-3 rounded-xl shadow-lg z-10 animation-popover relative p-4">
+          <div className="w-full bg-popover mt-3 rounded-xl shadow-lg z-10 animation-popover relative p-4">
             <div className="absolute left-[145px] top-[-5px]">
-              <DropDownArrow />
+              <DropDownArrow className="text-popover" />
             </div>
             <div className="w-full text-[12px] flex items-center justify-between">
               <p className="mx-2">

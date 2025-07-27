@@ -26,7 +26,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className="scrollbar scrollbar-thumb-primary-500 scrollbar-track-popover"
+    >
       <body
         suppressHydrationWarning
         className={`${poppins.variable} ${poppins.variable} ${poppins.className} ${baloo_2.style} ${baloo_2.variable} selection:bg-primary-500 selection:text-neutral-900 antialiased dark:bg-neutral-900`}

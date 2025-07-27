@@ -94,9 +94,9 @@ export const NOTIFICATIONS: INotification[] = [
       },
       slug: "attack-on-titan",
       published: true,
-      image: "/assets/aot.jpg",
-      additionImages: ["/assets/aot1.jpg", "/assets/aot2.jpg"],
-      backgroundImage: "/assets/aot-bg.jpg",
+      image: "/assests/aot.jpg",
+      additionImages: ["/assests/aot1.jpg", "/assests/aot2.jpg"],
+      backgroundImage: "/assests/aot-bg.jpg",
       genres: [
         {
           id: 1,
@@ -133,9 +133,9 @@ export const NOTIFICATIONS: INotification[] = [
       },
       slug: "jujutsu-kaisen",
       published: true,
-      image: "/assets/jjk.jpg",
-      additionImages: ["/assets/jjk1.jpg"],
-      backgroundImage: "/assets/jjk-bg.jpg",
+      image: "/assests/jjk.jpg",
+      additionImages: ["/assests/jjk1.jpg"],
+      backgroundImage: "/assests/jjk-bg.jpg",
       genres: [
         {
           id: 1,
@@ -172,8 +172,8 @@ export const NOTIFICATIONS: INotification[] = [
       },
       slug: "demon-slayer",
       published: true,
-      image: "/assets/demonslayer.jpg",
-      backgroundImage: "/assets/demonslayer-bg.jpg",
+      image: "/assests/demonslayer.jpg",
+      backgroundImage: "/assests/demonslayer-bg.jpg",
       genres: [
         {
           id: 3,
@@ -210,8 +210,8 @@ export const NOTIFICATIONS: INotification[] = [
       },
       slug: "one-piece",
       published: true,
-      image: "/assets/onepiece.jpg",
-      backgroundImage: "/assets/onepiece-bg.jpg",
+      image: "/assests/onepiece.jpg",
+      backgroundImage: "/assests/onepiece-bg.jpg",
       genres: [
         {
           id: 6,
@@ -249,9 +249,9 @@ export const FILMS: IFilm[] = [
     },
     slug: "attack-on-titan",
     published: true,
-    image: "/assets/aot.jpg",
-    additionImages: ["/assets/aot1.jpg", "/assets/aot2.jpg"],
-    backgroundImage: "/assets/aot-bg.jpg",
+    image: "/assests/aot.png",
+    additionImages: ["/assests/aot1.jpg", "/assests/aot2.jpg"],
+    backgroundImage: "/assests/aot-bg.jpg",
     genres: [
       {
         id: 1,
@@ -282,9 +282,9 @@ export const FILMS: IFilm[] = [
     },
     slug: "jujutsu-kaisen",
     published: true,
-    image: "/assets/jjk.jpg",
-    additionImages: ["/assets/jjk1.jpg"],
-    backgroundImage: "/assets/jjk-bg.jpg",
+    image: "/assests/aot.png",
+    additionImages: ["/assests/jjk1.jpg"],
+    backgroundImage: "/assests/aot-bg.jpg",
     genres: [
       {
         id: 1,
@@ -315,8 +315,8 @@ export const FILMS: IFilm[] = [
     },
     slug: "demon-slayer",
     published: true,
-    image: "/assets/demonslayer.jpg",
-    backgroundImage: "/assets/demonslayer-bg.jpg",
+    image: "/assests/aot.png",
+    backgroundImage: "/assests/aot-bg.jpg",
     genres: [
       {
         id: 3,
@@ -347,8 +347,8 @@ export const FILMS: IFilm[] = [
     },
     slug: "one-piece",
     published: true,
-    image: "/assets/onepiece.jpg",
-    backgroundImage: "/assets/onepiece-bg.jpg",
+    image: "/assests/aot.png",
+    backgroundImage: "/assests/aot-bg.jpg",
     genres: [
       {
         id: 6,

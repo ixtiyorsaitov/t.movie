@@ -18,18 +18,22 @@ import ShopAddIcon from "@/public/icons/shop-add-icon";
 import Notifications from "./notifications";
 import SearchBox from "./search";
 import { ModeToggle } from "@/components/ui/theme-toggle";
+import useResponsive from "@/hooks/use-responsive";
+import MenuIcon from "@/public/icons/menu-icon";
+import { MOBILE_BREAKPOINT } from "@/hooks/use-mobile";
 
 const NavigationBar = () => {
   const { toggleSidebar } = useSidebar();
+  const responsive = useResponsive(MOBILE_BREAKPOINT);
 
   return (
     <div className="flex items-center justify-end gap-2">
-      {/* <Button variant={"ghost"} onClick={toggleSidebar}>
-        <PanelLeftIcon className="size-6" />
-      </Button> */}
-      <SearchBox />
+      {!responsive && (
+        <>
+          <SearchBox />
+        </>
+      )}
       <ModeToggle />
-
       <Notifications />
 
       <div className="flex items-center justify-center p-[0.5px] relative w-12 h-12 border-2 border-primary rounded-full">
@@ -77,6 +81,9 @@ const NavigationBar = () => {
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
+      <Button className="!pl-0 !m-0" variant={"ghost"} onClick={toggleSidebar}>
+        <MenuIcon className="size-6" />
+      </Button>
     </div>
   );
 };

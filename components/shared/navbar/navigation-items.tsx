@@ -16,11 +16,12 @@ import { GENRES, NAVIGATION_ITEMS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import useResponsive from "@/hooks/use-responsive";
 import Logo from "@/public/icons/Logo";
+import { MOBILE_BREAKPOINT } from "@/hooks/use-mobile";
 
 const NavigationItems = () => {
   const responsive1200 = useResponsive(1300);
   const responsive1000 = useResponsive(1000);
-  const responsive767 = useResponsive(767);
+  const responsive767 = useResponsive(MOBILE_BREAKPOINT);
   const queryParams = "all";
   return (
     <NavigationMenu viewport={false}>
