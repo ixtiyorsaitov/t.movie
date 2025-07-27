@@ -26,10 +26,28 @@ export interface IFilm {
 }
 
 export interface IUser {
+  _id: string;
   name: string;
   meta: {
-    watchedList: string;
+    likes: string[];
+    watchedList: string[];
+    submitList: string[];
   };
+  createdAt?: Date;
+  updatedAt?: Date;
+}
+
+export interface IComment {
+  user: IUser;
+  containSpoiler: boolean;
+  film: IFilm;
+  content: string;
+  parent: IComment | null;
+  likes: number;
+  score: number;
+  createdAt?: Date;
+  updatedAt?: Date;
+  _id: string;
 }
 
 export interface INotification {

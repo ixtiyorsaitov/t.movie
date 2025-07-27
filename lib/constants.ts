@@ -1,3 +1,4 @@
+import MovieCard from "@/components/shared/movie-card/movie-card";
 import ArtistIcon from "@/public/icons/artists-icon";
 import BlogIcon from "@/public/icons/blog-icon";
 import ContactUsIcon from "@/public/icons/contact-us-icon";
@@ -5,7 +6,7 @@ import DiscoverIcon from "@/public/icons/discover-icon";
 import HelpCenterIcon from "@/public/icons/help-center-icon";
 import SettingIcon from "@/public/icons/setting-icon";
 import WatchListIcon from "@/public/icons/watchlist-icon";
-import { FilmType, IFilm, INotification } from "@/types";
+import { FilmType, IComment, IFilm, INotification, IUser } from "@/types";
 
 export const SIDEBAR_ITEMS = {
   group1: [
@@ -71,6 +72,73 @@ export const NAVIGATION_ITEMS = [
     id: 3,
     name: "Series",
     type: "series",
+  },
+];
+
+export const COMMENTS: IComment[] = [
+  {
+    _id: "1",
+    user: {
+      _id: "1",
+      name: "John Doe",
+      meta: {
+        likes: ["", ""],
+        watchedList: ["", ""],
+        submitList: ["", ""],
+      },
+    },
+    score: 10,
+    containSpoiler: true,
+    film: {
+      _id: "1",
+      title: "Attack on Titan",
+      description:
+        "In a world where humanity is on the brink of extinction from Titans, Eren and his friends fight back.",
+      type: FilmType.SERIES,
+      rating: {
+        avarage: 8.9,
+        total: 4450,
+        count: 500,
+      },
+      meta: {
+        likes: 1200,
+        watchList: 350,
+      },
+      slug: "attack-on-titan",
+      published: true,
+      image: "/assests/aot.jpg",
+      additionImages: ["/assests/aot1.jpg", "/assests/aot2.jpg"],
+      backgroundImage: "/assests/aot-bg.jpg",
+      genres: [
+        {
+          id: 1,
+          name: "Action",
+          slug: "action",
+        },
+        {
+          id: 17,
+          name: "Drama",
+          slug: "drama",
+        },
+      ],
+    },
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, ullam.",
+
+    parent: null,
+    likes: 50,
+  },
+];
+
+export const USERS: IUser[] = [
+  {
+    _id: "1",
+    name: "John Doe",
+    meta: {
+      likes: ["", ""],
+      watchedList: ["", ""],
+      submitList: ["", ""],
+    },
   },
 ];
 
@@ -282,9 +350,9 @@ export const FILMS: IFilm[] = [
     },
     slug: "jujutsu-kaisen",
     published: true,
-    image: "/assests/aot.png",
+    image: "/assests/jjk.jpg",
     additionImages: ["/assests/jjk1.jpg"],
-    backgroundImage: "/assests/aot-bg.jpg",
+    backgroundImage: "/assests/jjk-bg.jpg",
     genres: [
       {
         id: 1,
@@ -315,8 +383,8 @@ export const FILMS: IFilm[] = [
     },
     slug: "demon-slayer",
     published: true,
-    image: "/assests/aot.png",
-    backgroundImage: "/assests/aot-bg.jpg",
+    image: "/assests/ds.jpg",
+    backgroundImage: "/assests/ds-bg.jpg",
     genres: [
       {
         id: 3,
@@ -332,6 +400,70 @@ export const FILMS: IFilm[] = [
   },
   {
     _id: "4",
+    title: "Naruto",
+    description:
+      "Tanjiro Kamado becomes a demon slayer after demons attack his family.",
+    type: FilmType.SERIES,
+    rating: {
+      avarage: 8.6,
+      total: 3600,
+      count: 420,
+    },
+    meta: {
+      likes: 1120,
+      watchList: 500,
+    },
+    slug: "naruto",
+    published: true,
+    image: "/assests/naruto.jpg",
+    backgroundImage: "/assests/naruto-bg.jpg",
+    genres: [
+      {
+        id: 3,
+        name: "Fantasy",
+        slug: "fantasy",
+      },
+      {
+        id: 6,
+        name: "Adventure",
+        slug: "adventure",
+      },
+    ],
+  },
+  {
+    _id: "5",
+    title: "Your name",
+    description:
+      "Tanjiro Kamado becomes a demon slayer after demons attack his family.",
+    type: FilmType.MOVIE,
+    rating: {
+      avarage: 8.6,
+      total: 3600,
+      count: 420,
+    },
+    meta: {
+      likes: 1120,
+      watchList: 500,
+    },
+    slug: "your-name",
+    published: true,
+    image: "/assests/yn.jpg",
+    backgroundImage: "/assests/yn-bg.jpg",
+    genres: [
+      {
+        id: 3,
+        name: "Fantasy",
+        slug: "fantasy",
+      },
+      {
+        id: 6,
+        name: "Adventure",
+        slug: "adventure",
+      },
+    ],
+  },
+  {
+    _id: "6",
     title: "One Piece",
     description:
       "Monkey D. Luffy sails the Grand Line in search of the ultimate treasure, the One Piece.",
@@ -347,8 +479,8 @@ export const FILMS: IFilm[] = [
     },
     slug: "one-piece",
     published: true,
-    image: "/assests/aot.png",
-    backgroundImage: "/assests/aot-bg.jpg",
+    image: "/assests/op.jpg",
+    backgroundImage: "/assests/op-bg.jpg",
     genres: [
       {
         id: 6,

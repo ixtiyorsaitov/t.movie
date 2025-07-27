@@ -22,8 +22,10 @@ const EpisodesFilm = () => {
             onClick={() => setActiveSeason(1)}
             variant={"ghost"}
             className={cn(
-              "rounded-none bg-neutral-800",
-              activeSeason === 1 ? "bg-neutral-800" : "bg-transparent"
+              "rounded-none",
+              activeSeason === 1
+                ? "dark:bg-neutral-800 bg-neutral-200"
+                : "bg-transparent"
             )}
           >
             season 1
@@ -32,8 +34,10 @@ const EpisodesFilm = () => {
             onClick={() => setActiveSeason(2)}
             variant={"ghost"}
             className={cn(
-              "rounded-none bg-neutral-800",
-              activeSeason === 2 ? "bg-neutral-800" : "bg-transparent"
+              "rounded-none",
+              activeSeason === 2
+                ? "dark:bg-neutral-800 bg-neutral-200"
+                : "bg-transparent"
             )}
           >
             season 2
@@ -42,15 +46,17 @@ const EpisodesFilm = () => {
             onClick={() => setActiveSeason(3)}
             variant={"ghost"}
             className={cn(
-              "rounded-none bg-neutral-800",
-              activeSeason === 3 ? "bg-neutral-800" : "bg-transparent"
+              "rounded-none",
+              activeSeason === 3
+                ? "dark:bg-neutral-800 bg-neutral-200"
+                : "bg-transparent"
             )}
           >
             season 3
           </Button>
         </div>
       </div>
-      <div className="w-full bg-neutral-800 p-2 rounded-l-lg pb-6">
+      <div className="w-full dark:bg-neutral-800 bg-neutral-200 p-2 rounded-l-lg pb-6">
         <div className="w-full flex items-center justify-start">
           <Button variant={"secondary"}>10 episodes</Button>
         </div>

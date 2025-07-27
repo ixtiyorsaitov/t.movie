@@ -63,8 +63,8 @@ const MovieCard = ({ data }: { data: IFilm }) => {
             </Button>
           </div>
           <div className="absolute bottom-0 w-full flex items-center justify-center flex-col backdrop-blur-sm bg-black/30">
-            <p className="text-md">{data.title}</p>
-            <p className="text-[12px]">
+            <p className="text-md text-white">{data.title}</p>
+            <p className="text-[12px] text-white">
               {data.genres.map(
                 (genre, genreIndex) =>
                   `${genre.name}${

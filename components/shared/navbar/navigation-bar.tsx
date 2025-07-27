@@ -21,6 +21,7 @@ import { ModeToggle } from "@/components/ui/theme-toggle";
 import useResponsive from "@/hooks/use-responsive";
 import MenuIcon from "@/public/icons/menu-icon";
 import { MOBILE_BREAKPOINT } from "@/hooks/use-mobile";
+import CustomAvatar from "@/components/ui/custom-avatar";
 
 const NavigationBar = () => {
   const { toggleSidebar } = useSidebar();
@@ -36,26 +37,20 @@ const NavigationBar = () => {
       <ModeToggle />
       <Notifications />
 
-      <div className="flex items-center justify-center p-[0.5px] relative w-12 h-12 border-2 border-primary rounded-full">
+      <div className="flex items-center justify-center relative w-12 h-12 rounded-full">
         <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Avatar className="w-full h-full">
-              <AvatarImage src="https://github.com/shadcn.png" />
-              <AvatarFallback className="bg-primary-500 dark:text-black text-white">
-                CN
-              </AvatarFallback>
-            </Avatar>
+          <DropdownMenuTrigger>
+            <CustomAvatar
+              image="https://github.com/shadcn.png"
+              firstLetterOfName="IS"
+            />
           </DropdownMenuTrigger>
           <DropdownMenuContent className="relative w-[234px] px-2 -left-2 bg-popover rounded-xl">
             <DropdownMenuLabel className="w-full flex items-center justify-start gap-2">
-              <div className="w-12 h-12">
-                <Avatar className="w-full h-full">
-                  <AvatarImage src="https://github.com/shadcn.png" />
-                  <AvatarFallback className="bg-primary-500 dark:text-black text-white">
-                    CN
-                  </AvatarFallback>
-                </Avatar>
-              </div>
+              <CustomAvatar
+                image="https://github.com/shadcn.png"
+                firstLetterOfName="IS"
+              />
               <h1 className="text-xl">Ixtiyor</h1>
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
