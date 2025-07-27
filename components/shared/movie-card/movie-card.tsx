@@ -5,13 +5,12 @@ import CustomImage from "@/components/ui/custom-image";
 import HeartIcon from "@/public/icons/heart-icon";
 import StarIcon from "@/public/icons/star-icon";
 import "./movie-card.css";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { IFilm } from "@/types";
+import Link from "next/link";
 
 const MovieCard = ({ data }: { data: IFilm }) => {
-  const router = useRouter();
   const [isLiked, setIsLiked] = useState(false);
   const handleLike = () => {
     try {
@@ -22,10 +21,12 @@ const MovieCard = ({ data }: { data: IFilm }) => {
   };
 
   const handleRoute = () => {
-    router.push(`/films/${data.slug}`);
+    // router.push(`/films/${data.slug}`);
   };
   return (
-    <div
+    <Link
+      prefetch={false}
+      href={`/films/${data.slug}`}
       onClick={handleRoute}
       className="w-full h-[300px] p-2 dark:bg-neutral-800 bg-neutral-100 rounded-3xl"
     >
@@ -74,7 +75,7 @@ const MovieCard = ({ data }: { data: IFilm }) => {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

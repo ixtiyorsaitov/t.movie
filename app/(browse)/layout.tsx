@@ -14,10 +14,12 @@ const BrowseLayout = ({ children }: { children: React.ReactNode }) => {
     <SidebarProvider>
       <AppSidebar />
 
-      <main className="px-3 w-full h-[400vh]">
+      <main className="px-3 w-full">
         <Navbar />
         <div className="w-full flex items-center justify-center">
-          {children}
+          <div className="flex items-center justify-center max-w-400 w-full">
+            {children}
+          </div>
         </div>
       </main>
       {responsive && <MobileMenu />}

@@ -1,0 +1,28 @@
+/* @import "tailwindcss"; */
+
+.father-container:hover .blur-container {
+  backdrop-filter: blur(5px);
+}
+.father-container:hover .blur-container {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.image-father {
+  padding: 20px;
+  animation: scale 0.5s 1;
+}
+@keyframes scale {
+  0% {
+    padding: 80px;
+  }
+  100% {
+    padding: 20px;
+  }
+}
+
+.father-container:hover .image-father {
+  padding: 0;
+}
+.father-container:hover .image-father {
+  transition: 0.3s ease;
+}
