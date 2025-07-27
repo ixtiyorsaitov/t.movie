@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 
 const SidebarTop = () => {
-  const { state, isMobile } = useSidebar();
+  const { state } = useSidebar();
   return (
     <Link href={"/"} className="w-full flex items-center justify-center my-4">
       <Logo variant={state === "collapsed" ? "collapsed" : "default"} />

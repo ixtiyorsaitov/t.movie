@@ -16,10 +16,14 @@ const MovieCard = ({ data }: { data: IFilm }) => {
   const handleLike = () => {
     try {
       setIsLiked((prev) => !prev);
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  const handleRoute = () => {};
+  const handleRoute = () => {
+    router.push(`/films/${data.slug}`);
+  };
   return (
     <div
       onClick={handleRoute}

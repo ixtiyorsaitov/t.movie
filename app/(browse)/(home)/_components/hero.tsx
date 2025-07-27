@@ -11,7 +11,7 @@ import { FILMS } from "@/lib/constants";
 import { IFilm } from "@/types";
 
 const HeroSection = () => {
-  const [datas, setDatas] = useState<IFilm[]>(FILMS);
+  const [datas] = useState<IFilm[]>(FILMS);
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
     Autoplay({ delay: 3000 }),
   ]);

@@ -179,3 +179,16 @@
     top: 0;
   }
 }
+
+.animate-loader {
+  animation: animate-loader 1s infinite linear;
+}
+
+@keyframes animate-loader {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 720deg;
+  }
+}

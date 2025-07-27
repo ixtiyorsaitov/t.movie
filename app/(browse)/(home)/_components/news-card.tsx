@@ -18,13 +18,13 @@ const NewsCard = () => {
         <h1>Hot News</h1>
       </div>
       <div className="font-[300] text-[16px]">
-        "Slow Horses," the popular spy drama, has been renewed for a fifth
+        {`Slow Horses, the popular spy drama, has been renewed for a fifth
         season, much to the delight of its dedicated fanbase. The highly
         anticipated fourth season is set to premiere on September 4, 2024,
         promising more thrilling storylines and complex characters that viewers
         have come to love. Notable cast members, including the acclaimed Gary
         Oldman and Cillian Murphy, will continue to bring depth and intrigue to
-        the series.
+        the series.`}
       </div>
       <div className="w-full flex items-center text-sm justify-between mt-6">
         <p className="text-muted-foreground">25 July</p>

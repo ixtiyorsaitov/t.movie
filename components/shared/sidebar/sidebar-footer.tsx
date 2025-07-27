@@ -1,11 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { SidebarMenuButton, useSidebar } from "@/components/ui/sidebar";
+import { useSidebar } from "@/components/ui/sidebar";
 import { cn } from "@/lib/utils";
 import CrownIcon from "@/public/icons/crown";
 import React from "react";
 
 const SidebarBottom = () => {
-  const { state, isMobile } = useSidebar();
+  const { state } = useSidebar();
 
   const isCollapsed = state === "collapsed";
 

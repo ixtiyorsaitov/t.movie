@@ -23,7 +23,7 @@ const SearchBox = ({ autoFocus = false }: Props) => {
   const [loading, setLoading] = useState<boolean>(true);
   const [searchPopover, setSearchPopover] = useState<boolean>(false);
   const [recommended, setRecommended] = useState<IFilm[]>([]);
-  const [result, setResult] = useState<IFilm[]>([]);
+  const [result] = useState<IFilm[]>([]);
   const responsive = useResponsive(MOBILE_BREAKPOINT);
   const wrapperRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -51,7 +51,9 @@ const SearchBox = ({ autoFocus = false }: Props) => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {};
+  const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value);
+  };
 
   const handleSearchDebounce = useCallback(debounce(onInputChange, 300), []);
 

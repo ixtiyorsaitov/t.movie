@@ -32,7 +32,7 @@ const Notifications = () => {
         setNotifications(NOTIFICATIONS);
       }, 1000);
     }
-  }, [isNotificationOpen]);
+  }, [isNotificationOpen, notifications.length]);
   return (
     <DropdownMenu
       open={isNotificationOpen}

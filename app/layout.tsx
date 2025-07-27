@@ -29,7 +29,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className="scrollbar scrollbar-thumb-primary-500 scrollbar-track-popover"
+      className="scrollbar scrollbar-thumb-primary-500 scrollbar-track-neutral-900"
     >
       <body
         suppressHydrationWarning
