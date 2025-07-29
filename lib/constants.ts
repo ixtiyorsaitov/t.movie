@@ -1,4 +1,3 @@
-import MovieCard from "@/components/shared/movie-card/movie-card";
 import ArtistIcon from "@/public/icons/artists-icon";
 import BlogIcon from "@/public/icons/blog-icon";
 import ContactUsIcon from "@/public/icons/contact-us-icon";
@@ -7,6 +6,8 @@ import HelpCenterIcon from "@/public/icons/help-center-icon";
 import SettingIcon from "@/public/icons/setting-icon";
 import WatchListIcon from "@/public/icons/watchlist-icon";
 import { FilmType, IComment, IFilm, INotification, IUser } from "@/types";
+
+export const DOMAIN = process.env.NEXT_PUBLIC_DOMAIN_URI;
 
 export const SIDEBAR_ITEMS = {
   group1: [
@@ -162,7 +163,7 @@ export const NOTIFICATIONS: INotification[] = [
       },
       slug: "attack-on-titan",
       published: true,
-      image: "/assests/aot.jpg",
+      image: "/assests/aot.png",
       additionImages: ["/assests/aot1.jpg", "/assests/aot2.jpg"],
       backgroundImage: "/assests/aot-bg.jpg",
       genres: [
@@ -240,8 +241,8 @@ export const NOTIFICATIONS: INotification[] = [
       },
       slug: "demon-slayer",
       published: true,
-      image: "/assests/demonslayer.jpg",
-      backgroundImage: "/assests/demonslayer-bg.jpg",
+      image: "/assests/ds.jpg",
+      backgroundImage: "/assests/ds-bg.jpg",
       genres: [
         {
           id: 3,
@@ -263,33 +264,33 @@ export const NOTIFICATIONS: INotification[] = [
     _id: "4",
     film: {
       _id: "4",
-      title: "One Piece",
+      title: "Naruto",
       description:
-        "Monkey D. Luffy sails the Grand Line in search of the ultimate treasure, the One Piece.",
+        "Tanjiro Kamado becomes a demon slayer after demons attack his family.",
       type: FilmType.SERIES,
       rating: {
-        avarage: 9.1,
-        total: 6200,
-        count: 700,
+        avarage: 8.6,
+        total: 3600,
+        count: 420,
       },
       meta: {
-        likes: 2000,
-        watchList: 600,
+        likes: 1120,
+        watchList: 500,
       },
-      slug: "one-piece",
+      slug: "naruto",
       published: true,
-      image: "/assests/onepiece.jpg",
-      backgroundImage: "/assests/onepiece-bg.jpg",
+      image: "/assests/naruto.jpg",
+      backgroundImage: "/assests/naruto-bg.jpg",
       genres: [
+        {
+          id: 3,
+          name: "Fantasy",
+          slug: "fantasy",
+        },
         {
           id: 6,
           name: "Adventure",
           slug: "adventure",
-        },
-        {
-          id: 2,
-          name: "Comedy",
-          slug: "comedy",
         },
       ],
     },

@@ -4,8 +4,9 @@ import { cn } from "@/lib/utils";
 import "./styles.css";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { IFilm } from "@/types";
 
-const MainDetails = () => {
+const MainDetails = ({ data }: { data: IFilm }) => {
   return (
     <div
       className={cn(
@@ -14,8 +15,8 @@ const MainDetails = () => {
     >
       <div className="absolute w-full h-full top-0 left-0 z-[-1] overflow-hidden">
         <CustomImage
-          src={"/assests/aot-bg.jpg"}
-          alt="Attack on titan"
+          src={data.backgroundImage}
+          alt={`Background image of ${data.backgroundImage}`}
           fill
           className="object-cover"
         />
@@ -25,8 +26,8 @@ const MainDetails = () => {
       <div className="w-full md:w-[35%] h-[300px] md:h-full relative overflow-hidden rounded-2xl image-father transition">
         <div className="w-full h-full relative overflow-hidden">
           <CustomImage
-            src={"/assests/aot.png"}
-            alt="Attack on titan"
+            src={data.image}
+            alt={`Image of ${data.image}`}
             className="object-cover"
             fill
           />
@@ -37,7 +38,7 @@ const MainDetails = () => {
         <div className="flex items-center md:items-start justify-start flex-col text-white text-center md:text-left">
           <div className="flex items-center justify-center md:justify-start w-full">
             <h1 className="text-3xl md:text-6xl font-baloo2 font-bold">
-              Attack on titans
+              {data.title}
             </h1>
           </div>
 
@@ -46,39 +47,19 @@ const MainDetails = () => {
           </div>
 
           <div className="flex w-full my-4 md:my-6 items-center justify-center md:justify-start gap-2 flex-wrap">
-            <Link
-              className="dark:bg-neutral-900 bg-neutral-300 text-black dark:text-white hover:bg-neutral-400 dark:hover:bg-neutral-800 text-xs md:text-sm border border-input px-2 md:px-3 py-1 rounded-lg"
-              href={""}
-            >
-              Action
-            </Link>
-            <Link
-              className="dark:bg-neutral-900 bg-neutral-300 text-black dark:text-white hover:bg-neutral-400 dark:hover:bg-neutral-800 text-xs md:text-sm border border-input px-2 md:px-3 py-1 rounded-lg"
-              href={""}
-            >
-              Adventure
-            </Link>
-            <Link
-              className="dark:bg-neutral-900 bg-neutral-300 text-black dark:text-white hover:bg-neutral-400 dark:hover:bg-neutral-800 text-xs md:text-sm border border-input px-2 md:px-3 py-1 rounded-lg"
-              href={""}
-            >
-              Drama
-            </Link>
+            {data.genres.map((genre) => (
+              <Link
+                key={genre.id}
+                className="dark:bg-neutral-900 bg-neutral-300 text-black dark:text-white hover:bg-neutral-400 dark:hover:bg-neutral-800 text-xs md:text-sm border border-input px-2 md:px-3 py-1 rounded-lg"
+                href={""}
+              >
+                {genre.name}
+              </Link>
+            ))}
           </div>
 
           <p className="line-clamp-4 md:line-clamp-6 max-w-2xl text-sm md:text-base leading-relaxed">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati
-            exercitationem voluptates dolorum laborum maiores dolores? Est error
-            dolores repudiandae placeat nisi soluta, officiis praesentium illum?
-            Ipsa, quos sint blanditiis quod ut deserunt eligendi repellendus.
-            Nostrum explicabo earum deserunt tempora, quod doloremque accusamus
-            quasi repellendus quae? Ea expedita repudiandae vero quibusdam eaque
-            libero voluptate molestiae? Suscipit accusantium, sunt fuga tempora
-            nulla eius recusandae commodi, officiis explicabo neque dolore
-            ratione quis aut libero? Repudiandae tempora nam culpa quo nobis ut?
-            Neque incidunt odit distinctio sunt, doloremque, rerum quisquam
-            provident iure alias mollitia possimus corporis quam esse doloribus!
-            Ipsum, blanditiis cum. Hic, eos.
+            {data.description}
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-2 mt-4 md:mt-6 w-full">

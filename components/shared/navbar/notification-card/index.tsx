@@ -27,8 +27,8 @@ const NotificationCard = ({ data, index }: Props) => {
       >
         <div className="w-24 h-32 relative rounded-xl overflow-hidden">
           <Image
-            src={"/assests/aot.png"}
-            alt="Attack on titan"
+            src={data.film.image}
+            alt={`Image of ${data.film.title}`}
             fill
             className="object-cover hover:scale-110 transition"
           />
