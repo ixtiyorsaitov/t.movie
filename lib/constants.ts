@@ -5,7 +5,14 @@ import DiscoverIcon from "@/public/icons/discover-icon";
 import HelpCenterIcon from "@/public/icons/help-center-icon";
 import SettingIcon from "@/public/icons/setting-icon";
 import WatchListIcon from "@/public/icons/watchlist-icon";
-import { FilmType, IComment, IFilm, INotification, IUser } from "@/types";
+import {
+  FilmType,
+  IComment,
+  IFilm,
+  IGenres,
+  INotification,
+  IUser,
+} from "@/types";
 
 export const DOMAIN = process.env.NEXT_PUBLIC_DOMAIN_URI;
 
@@ -112,12 +119,12 @@ export const COMMENTS: IComment[] = [
       backgroundImage: "/assests/aot-bg.jpg",
       genres: [
         {
-          id: 1,
+          _id: "1",
           name: "Action",
           slug: "action",
         },
         {
-          id: 17,
+          _id: "17",
           name: "Drama",
           slug: "drama",
         },
@@ -168,12 +175,12 @@ export const NOTIFICATIONS: INotification[] = [
       backgroundImage: "/assests/aot-bg.jpg",
       genres: [
         {
-          id: 1,
+          _id: "1",
           name: "Action",
           slug: "action",
         },
         {
-          id: 17,
+          _id: "17",
           name: "Drama",
           slug: "drama",
         },
@@ -207,12 +214,12 @@ export const NOTIFICATIONS: INotification[] = [
       backgroundImage: "/assests/jjk-bg.jpg",
       genres: [
         {
-          id: 1,
+          _id: "1",
           name: "Action",
           slug: "action",
         },
         {
-          id: 11,
+          _id: "11",
           name: "Animation",
           slug: "animation",
         },
@@ -245,12 +252,12 @@ export const NOTIFICATIONS: INotification[] = [
       backgroundImage: "/assests/ds-bg.jpg",
       genres: [
         {
-          id: 3,
+          _id: "3",
           name: "Fantasy",
           slug: "fantasy",
         },
         {
-          id: 6,
+          _id: "6",
           name: "Adventure",
           slug: "adventure",
         },
@@ -283,12 +290,12 @@ export const NOTIFICATIONS: INotification[] = [
       backgroundImage: "/assests/naruto-bg.jpg",
       genres: [
         {
-          id: 3,
+          _id: "3",
           name: "Fantasy",
           slug: "fantasy",
         },
         {
-          id: 6,
+          _id: "6",
           name: "Adventure",
           slug: "adventure",
         },
@@ -323,12 +330,12 @@ export const FILMS: IFilm[] = [
     backgroundImage: "/assests/aot-bg.jpg",
     genres: [
       {
-        id: 1,
+        _id: "1",
         name: "Action",
         slug: "action",
       },
       {
-        id: 17,
+        _id: "17",
         name: "Drama",
         slug: "drama",
       },
@@ -356,12 +363,12 @@ export const FILMS: IFilm[] = [
     backgroundImage: "/assests/jjk-bg.jpg",
     genres: [
       {
-        id: 1,
+        _id: "1",
         name: "Action",
         slug: "action",
       },
       {
-        id: 11,
+        _id: "11",
         name: "Animation",
         slug: "animation",
       },
@@ -388,12 +395,12 @@ export const FILMS: IFilm[] = [
     backgroundImage: "/assests/ds-bg.jpg",
     genres: [
       {
-        id: 3,
+        _id: "3",
         name: "Fantasy",
         slug: "fantasy",
       },
       {
-        id: 6,
+        _id: "6",
         name: "Adventure",
         slug: "adventure",
       },
@@ -420,12 +427,12 @@ export const FILMS: IFilm[] = [
     backgroundImage: "/assests/naruto-bg.jpg",
     genres: [
       {
-        id: 3,
+        _id: "3",
         name: "Fantasy",
         slug: "fantasy",
       },
       {
-        id: 6,
+        _id: "6",
         name: "Adventure",
         slug: "adventure",
       },
@@ -452,12 +459,12 @@ export const FILMS: IFilm[] = [
     backgroundImage: "/assests/yn-bg.jpg",
     genres: [
       {
-        id: 3,
+        _id: "3",
         name: "Fantasy",
         slug: "fantasy",
       },
       {
-        id: 6,
+        _id: "6",
         name: "Adventure",
         slug: "adventure",
       },
@@ -484,12 +491,12 @@ export const FILMS: IFilm[] = [
     backgroundImage: "/assests/op-bg.jpg",
     genres: [
       {
-        id: 6,
+        _id: "6",
         name: "Adventure",
         slug: "adventure",
       },
       {
-        id: 2,
+        _id: "2",
         name: "Comedy",
         slug: "comedy",
       },
@@ -497,129 +504,129 @@ export const FILMS: IFilm[] = [
   },
 ];
 
-export const GENRES = [
+export const GENRES: IGenres[] = [
   {
-    id: 1,
+    _id: "1",
     name: "Action",
     slug: "action",
   },
   {
-    id: 2,
+    _id: "2",
     name: "Comedy",
     slug: "comedy",
   },
   {
-    id: 3,
+    _id: "3",
     name: "Fantasy",
     slug: "fantasy",
   },
   {
-    id: 4,
+    _id: "4",
     name: "Mystery",
     slug: "mystery",
   },
   {
-    id: 5,
+    _id: "5",
     name: "Spy",
     slug: "spy",
   },
   {
-    id: 6,
+    _id: "6",
     name: "Adventure",
     slug: "adventure",
   },
   {
-    id: 7,
+    _id: "7",
     name: "Crime",
     slug: "crime",
   },
   {
-    id: 8,
+    _id: "8",
     name: "Game Show",
     slug: "game-show",
   },
   {
-    id: 9,
+    _id: "9",
     name: "Romance",
     slug: "romance",
   },
   {
-    id: 10,
+    _id: "10",
     name: "Talk Show",
     slug: "talk-show",
   },
   {
-    id: 11,
+    _id: "11",
     name: "Animation",
     slug: "animation",
   },
   {
-    id: 12,
+    _id: "12",
     name: "Documentary",
     slug: "documentary",
   },
   {
-    id: 13,
+    _id: "13",
     name: "Historical",
     slug: "historical",
   },
   {
-    id: 14,
+    _id: "14",
     name: "Sci-Fi",
     slug: "sci-fi",
   },
   {
-    id: 15,
+    _id: "15",
     name: "Thriller",
     slug: "thriller",
   },
   {
-    id: 16,
+    _id: "16",
     name: "Anime",
     slug: "anime",
   },
   {
-    id: 17,
+    _id: "17",
     name: "Drama",
     slug: "drama",
   },
   {
-    id: 18,
+    _id: "18",
     name: "Horror",
     slug: "horror",
   },
   {
-    id: 19,
+    _id: "19",
     name: "Short",
     slug: "short",
   },
   {
-    id: 20,
+    _id: "20",
     name: "War",
     slug: "war",
   },
   {
-    id: 21,
+    _id: "21",
     name: "Biography",
     slug: "biography",
   },
   {
-    id: 22,
+    _id: "22",
     name: "Epic",
     slug: "epic",
   },
   {
-    id: 23,
+    _id: "23",
     name: "Musical",
     slug: "musical",
   },
   {
-    id: 24,
+    _id: "24",
     name: "Sports",
     slug: "sports",
   },
   {
-    id: 25,
+    _id: "25",
     name: "Western",
     slug: "western",
   },

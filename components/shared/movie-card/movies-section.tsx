@@ -1,6 +1,5 @@
 "use client";
 
-import useResponsive from "@/hooks/use-responsive";
 import { cn } from "@/lib/utils";
 import MovieCard from "./movie-card";
 import Link from "next/link";
@@ -13,8 +12,6 @@ interface Props {
 }
 
 const MoviesSection = ({ title, datas }: Props) => {
-  const responsive1200 = useResponsive(1200);
-
   return (
     <div className="w-full flex items-center justify-between flex-col gap-y-6 my-6">
       <div className="w-full flex items-center justify-between font-baloo2">
@@ -27,12 +24,7 @@ const MoviesSection = ({ title, datas }: Props) => {
           View All <ArrowRight className="text-primary" />
         </Link>
       </div>
-      <div
-        className={cn(
-          "w-full grid gap-2",
-          responsive1200 ? "grid-cols-2" : "grid-cols-4"
-        )}
-      >
+      <div className="w-full grid gap-2 grid-cols-2 xl:grid-cols-4">
         {datas.map((data) => (
           <MovieCard data={data} key={data._id} />
         ))}

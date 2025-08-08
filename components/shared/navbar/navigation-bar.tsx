@@ -1,6 +1,5 @@
 "use client";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -18,22 +17,17 @@ import ShopAddIcon from "@/public/icons/shop-add-icon";
 import Notifications from "./notifications";
 import SearchBox from "./search";
 import { ModeToggle } from "@/components/ui/theme-toggle";
-import useResponsive from "@/hooks/use-responsive";
 import MenuIcon from "@/public/icons/menu-icon";
-import { MOBILE_BREAKPOINT } from "@/hooks/use-mobile";
 import CustomAvatar from "@/components/ui/custom-avatar";
 
 const NavigationBar = () => {
   const { toggleSidebar } = useSidebar();
-  const responsive = useResponsive(MOBILE_BREAKPOINT);
-
   return (
     <div className="flex items-center justify-end gap-2">
-      {!responsive && (
-        <>
-          <SearchBox />
-        </>
-      )}
+      <div className="lg:flex hidden">
+        <SearchBox />
+      </div>
+
       <ModeToggle />
       <Notifications />
 
@@ -76,7 +70,11 @@ const NavigationBar = () => {
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-      <Button className="!pl-0 !m-0" variant={"ghost"} onClick={toggleSidebar}>
+      <Button
+        className="!pl-0 !m-0 lg:hidden flex"
+        variant={"ghost"}
+        onClick={toggleSidebar}
+      >
         <MenuIcon className="size-6" />
       </Button>
     </div>

@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import CustomImage from "@/components/ui/custom-image";
-import useResponsive from "@/hooks/use-responsive";
 import { cn } from "@/lib/utils";
 import StarIcon from "@/public/icons/star-icon";
 import { IFilm } from "@/types";
@@ -8,7 +7,6 @@ import { Film, Play } from "lucide-react";
 import React, { Fragment } from "react";
 
 const CarouselContent = ({ data }: { data: IFilm }) => {
-  const responsive530 = useResponsive(530);
   return (
     <div className="relative w-full h-full overflow-hidden text-white">
       <CustomImage
@@ -45,16 +43,14 @@ const CarouselContent = ({ data }: { data: IFilm }) => {
           </div>
         </div>
         <p className="max-w-lg mb-6 text-sm line-clamp-4">{data.description}</p>
-        <div
-          className={cn("flex gap-x-4", responsive530 && "flex-col gap-y-2")}
-        >
-          <Button className={cn("!px-10")}>
+        <div className="flex gap-x-4 sm:flex-col sm:gap-y-2">
+          <Button className="!px-10">
             <Play className="w-5 h-5" />
             WATCH
           </Button>
           <Button
             variant="outline"
-            className={cn("!px-10 backdrop-blur-sm", responsive530 && "w-40")}
+            className="!px-10 backdrop-blur-sm sm:w-40"
           >
             <Film className="w-5 h-5" />
             Trailer

@@ -16,15 +16,12 @@ import NotificationCard from "./notification-card";
 import { Trash2 } from "lucide-react";
 import { INotification } from "@/types";
 import NotificationCardSkeleton from "./notification-card/skeleton";
-import useResponsive from "@/hooks/use-responsive";
 import { cn } from "@/lib/utils";
 
 const Notifications = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [notifications, setNotifications] = useState<INotification[]>([]);
   const [isNotificationOpen, setIsNotificationOpen] = useState<boolean>(false);
-  const responsive600 = useResponsive(600);
-  const responsive440 = useResponsive(440);
   useEffect(() => {
     if (isNotificationOpen && notifications.length === 0) {
       setTimeout(() => {
@@ -38,21 +35,14 @@ const Notifications = () => {
       open={isNotificationOpen}
       onOpenChange={setIsNotificationOpen}
     >
-      <DropdownMenuTrigger asChild>
+      <DropdownMenuTrigger asChild className="md:flex hidden">
         <Button className="relative" variant={"ghost"} size={"icon"}>
           <div className="absolute bg-red-500 w-2 h-2 rounded-full top-2 right-2"></div>
           <NotificationIcon className="!w-7 !h-7" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent
-        className={cn(
-          "relative pt-4 pb-0 bg-popover top-1",
-          responsive600 && !responsive440
-            ? "w-100 -left-5 px-2"
-            : responsive440
-            ? "w-90"
-            : "w-116 -left-15 px-8"
-        )}
+        className="relative pt-4 pb-0 bg-popover top-1 w-90 sm:w-100 md:w-116 -left-5 sm:-left-5 md:-left-15 px-2 sm:px-2 md:px-8"
       >
         <DropdownMenuLabel className="w-full flex items-center justify-between">
           <p>Notifications</p>
@@ -62,11 +52,11 @@ const Notifications = () => {
         <div className="w-full h-full max-h-100 overflow-auto scrollbar-thin scrollbar-thumb-primary-500 scrollbar-track-popover">
           {loading
             ? Array.from({ length: 3 }).map((_, i) => (
-                <NotificationCardSkeleton key={i} />
-              ))
+              <NotificationCardSkeleton key={i} />
+            ))
             : NOTIFICATIONS.map((data, idx) => (
-                <NotificationCard key={data._id} index={idx} data={data} />
-              ))}
+              <NotificationCard key={data._id} index={idx} data={data} />
+            ))}
         </div>
 
         <div className="w-full pt-4 pb-2 sticky b-0 bg-popover h-ull flex items-center justify-center">

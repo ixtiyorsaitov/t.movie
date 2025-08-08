@@ -1,15 +1,11 @@
 "use client";
 
-import MobileMenu from "@/components/shared/navbar/mobile-menu";
 import Navbar from "@/components/shared/navbar/navbar";
 import AppSidebar from "@/components/shared/sidebar/sidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
-import { MOBILE_BREAKPOINT } from "@/hooks/use-mobile";
-import useResponsive from "@/hooks/use-responsive";
 import React from "react";
 
 const BrowseLayout = ({ children }: { children: React.ReactNode }) => {
-  const responsive = useResponsive(MOBILE_BREAKPOINT);
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -22,7 +18,6 @@ const BrowseLayout = ({ children }: { children: React.ReactNode }) => {
           </div>
         </div>
       </main>
-      {responsive && <MobileMenu />}
     </SidebarProvider>
   );
 };

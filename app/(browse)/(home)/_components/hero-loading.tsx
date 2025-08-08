@@ -2,12 +2,10 @@
 
 import CustomLoader from "@/components/ui/custom-loader";
 import { Skeleton } from "@/components/ui/skeleton";
-import useResponsive from "@/hooks/use-responsive";
 import { cn } from "@/lib/utils";
 import StarIcon from "@/public/icons/star-icon";
 
 export default function HeroLoading() {
-  const responsive530 = useResponsive(530);
 
   return (
     <div className="relative">
@@ -32,23 +30,9 @@ export default function HeroLoading() {
             <Skeleton className="max-w-lg w-118 mb-2 h-3 bg-neutral-200" />
             <Skeleton className="max-w-lg w-116 mb-2 h-3 bg-neutral-200" />
             <Skeleton className="max-w-lg w-122 mb-1 h-3 bg-neutral-200" />
-            <div
-              className={cn(
-                "flex gap-x-4 mt-4",
-                responsive530 && "flex-col gap-y-2"
-              )}
-            >
-              <Skeleton
-                className={cn(
-                  "py-2 bg-primary w-[143px] h-9 flex items-center justify-center gap-1 dark:text-black"
-                )}
-              />
-              <Skeleton
-                className={cn(
-                  "py-2 bg-transparent border border-primary w-[143px] h-9",
-                  responsive530 && "w-40"
-                )}
-              />
+            <div className="flex gap-x-4 mt-4 sm:flex-col sm:gap-y-2">
+              <Skeleton className="py-2 bg-primary w-[143px] h-9 flex items-center justify-center gap-1 dark:text-black" />
+              <Skeleton className="py-2 bg-transparent border border-primary w-[143px] h-9 sm:w-40" />
             </div>
           </div>
         </div>

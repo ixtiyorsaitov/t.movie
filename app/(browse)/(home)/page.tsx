@@ -1,14 +1,11 @@
 "use client";
 
 import NewsPanel from "./_components/aside";
-import useResponsive from "@/hooks/use-responsive";
-import { MOBILE_BREAKPOINT } from "@/hooks/use-mobile";
 import HeroSection from "./_components/hero";
 import MoviesSection from "@/components/shared/movie-card/movies-section";
 import { FILMS } from "@/lib/constants";
 
 export default function HomePage() {
-  const responsiveSidebarBreakPoint = useResponsive(MOBILE_BREAKPOINT);
   return (
     <div className="flex items-start justify-between w-full overflow-hidden px-3">
       {/* Main Content Area */}
@@ -22,7 +19,9 @@ export default function HomePage() {
       </main>
 
       {/* Right News Panel */}
-      {!responsiveSidebarBreakPoint && <NewsPanel />}
+      <div className="hidden lg:block">
+        <NewsPanel />
+      </div>
     </div>
   );
 }

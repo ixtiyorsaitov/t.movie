@@ -11,8 +11,6 @@ import { IFilm } from "@/types";
 import SearchResultCardSkeleton from "./loading";
 import { debounce } from "lodash";
 import DropDownArrow from "@/public/icons/dropdown-arrow";
-import useResponsive from "@/hooks/use-responsive";
-import { MOBILE_BREAKPOINT } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 
 interface Props {
@@ -24,9 +22,9 @@ const SearchBox = ({ autoFocus = false }: Props) => {
   const [searchPopover, setSearchPopover] = useState<boolean>(false);
   const [recommended, setRecommended] = useState<IFilm[]>([]);
   const [result] = useState<IFilm[]>([]);
-  const responsive = useResponsive(MOBILE_BREAKPOINT);
   const wrapperRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+
   useEffect(() => {
     if (autoFocus) {
       inputRef.current?.focus();
@@ -58,13 +56,8 @@ const SearchBox = ({ autoFocus = false }: Props) => {
   const handleSearchDebounce = useCallback(debounce(onInputChange, 300), []);
 
   return (
-    <div className={cn("relative", responsive && "w-full")} ref={wrapperRef}>
-      <div
-        className={cn(
-          "flex items-center justify-center",
-          responsive && "w-full"
-        )}
-      >
+    <div className="relative hidden lg:flex w-full" ref={wrapperRef}>
+      <div className="flex items-center justify-center w-full">
         <Button
           variant={"ghost"}
           className="bg-popover rounded-r-none rounded-l-xl h-11 w-11"
@@ -75,7 +68,7 @@ const SearchBox = ({ autoFocus = false }: Props) => {
         <Input
           className={cn(
             "!bg-popover h-11 rounded-none focus-visible:ring-0 border-none shadow-none",
-            responsive ? "w-full" : "w-[222px]"
+            "w-full lg:w-[222px]"
           )}
           placeholder="Search the series, movies..."
           onFocus={() => setSearchPopover(true)}

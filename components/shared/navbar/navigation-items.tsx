@@ -14,75 +14,64 @@ import {
 } from "@/components/ui/navigation-menu";
 import { GENRES, NAVIGATION_ITEMS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
-import useResponsive from "@/hooks/use-responsive";
 import Logo from "@/public/icons/Logo";
-import { MOBILE_BREAKPOINT } from "@/hooks/use-mobile";
 
 const NavigationItems = () => {
-  const responsive1200 = useResponsive(1300);
-  const responsive1000 = useResponsive(1000);
-  const responsive767 = useResponsive(MOBILE_BREAKPOINT);
   const queryParams = "all";
+
   return (
     <NavigationMenu viewport={false}>
       <NavigationMenuList>
-        {!responsive767 ? (
-          <>
-            {NAVIGATION_ITEMS.map((item) => {
-              const isActive = item.type === queryParams;
-              return (
-                <NavigationMenuItem key={item.id}>
-                  <NavigationMenuLink
-                    asChild
-                    className={cn(
-                      navigationMenuTriggerStyle(),
-                      "bg-transparent hover:bg-transparent rounded-none",
-                      isActive
-                        ? "text-primary-500 border-b  border-b-yellow-500"
-                        : "hover:text-primary-500"
-                    )}
-                  >
-                    <Link href="/">{item.name}</Link>
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-              );
-            })}
-          </>
-        ) : (
+        {/* Desktop navigation */}
+        <div className="hidden md:flex">
+          {NAVIGATION_ITEMS.map((item) => {
+            const isActive = item.type === queryParams;
+            return (
+              <NavigationMenuItem key={item.id}>
+                <NavigationMenuLink
+                  asChild
+                  className={cn(
+                    navigationMenuTriggerStyle(),
+                    "bg-transparent hover:bg-transparent rounded-none",
+                    isActive
+                      ? "text-primary-500 border-b border-b-yellow-500"
+                      : "hover:text-primary-500"
+                  )}
+                >
+                  <Link href="/">{item.name}</Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            );
+          })}
+        </div>
+
+        {/* Mobile logo */}
+        <div className="flex md:hidden">
           <Link href={"/"}>
             <Logo />
           </Link>
-        )}
+        </div>
 
-        {!responsive767 && (
+        {/* Genres menu only for desktop */}
+        <div className="hidden md:flex">
           <NavigationMenuItem>
             <NavigationMenuTrigger>Genres</NavigationMenuTrigger>
             <NavigationMenuContent
               className={cn(
-                "p-6 absolute !rounded-2xl  !bg-popover z-[999]",
-                responsive1200 && !responsive1000
-                  ? "!w-[600px]"
-                  : responsive1000 && !responsive767
-                  ? "!w-[400px]"
-                  : responsive767
-                  ? "left-1/2 -translate-x-1/2 !w-[400px]"
-                  : "!w-[937px]"
+                "p-6 absolute !rounded-2xl !bg-popover z-[999]",
+                "2xl:w-[937px] xl:w-[600px] lg:w-[400px] md:w-[400px]"
               )}
             >
               <div
                 className={cn(
                   "grid gap-5 w-full px-2",
-                  responsive1200 && !responsive1000
-                    ? "grid-cols-4"
-                    : responsive1000
-                    ? "grid-cols-2"
-                    : "grid-cols-5"
+                  "2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-2"
                 )}
               >
-                {GENRES.map((genre) => (
+                {GENRES.map((genre, i) => (
                   <Link
-                    href={`/filter?genre=${genre.id}`}
-                    key={genre.id}
+                    href={`/filter?genre=${genre._id}`}
+                    key={i}
                     className="flex items-center justify-start gap-1 hover:text-primary-500 cursor-pointer"
                   >
                     <div className="w-3 h-3 rounded-full bg-primary-500" />
@@ -92,7 +81,7 @@ const NavigationItems = () => {
               </div>
             </NavigationMenuContent>
           </NavigationMenuItem>
-        )}
+        </div>
       </NavigationMenuList>
     </NavigationMenu>
   );
