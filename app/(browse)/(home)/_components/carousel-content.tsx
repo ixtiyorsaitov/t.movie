@@ -28,29 +28,25 @@ const CarouselContent = ({ data }: { data: IFilm }) => {
           </div>
           <div className="flex items-center justify-start gap-1">
             {data.genres.map((genre, genreIndex) => (
-              <Fragment key={genre.id}>
+              <Fragment key={genre._id}>
                 <span>{genre.name}</span>
                 {genreIndex + 1 !== data.genres.length && (
                   <span className="text-primary">|</span>
                 )}
               </Fragment>
             ))}
-            {/* <span>Action</span>
-            <span className="text-primary">|</span>
-            <span>Adventure</span>
-            <span className="text-primary">|</span>
-            <span>Drama</span> */}
+
           </div>
         </div>
         <p className="max-w-lg mb-6 text-sm line-clamp-4">{data.description}</p>
-        <div className="flex gap-x-4 sm:flex-col sm:gap-y-2">
-          <Button className="!px-10">
+        <div className="md:flex space-x-2 space-y-2">
+          <Button className="min-w-[200px] md:w-auto w-full">
             <Play className="w-5 h-5" />
             WATCH
           </Button>
           <Button
             variant="outline"
-            className="!px-10 backdrop-blur-sm sm:w-40"
+            className="md:min-w-[200px] min-w-auto md:w-auto w-2/3 backdrop-blur-sm"
           >
             <Film className="w-5 h-5" />
             Trailer

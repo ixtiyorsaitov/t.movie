@@ -15,13 +15,14 @@ const MoviesSection = ({ title, datas }: Props) => {
   return (
     <div className="w-full flex items-center justify-between flex-col gap-y-6 my-6">
       <div className="w-full flex items-center justify-between font-baloo2">
-        <h3 className="text-3xl font-bold ">{title}</h3>
+        <h3 className="text-2xl sm:text-3xl font-bold md:text-4xl">{title}</h3>
         <Link
           href="#"
           className="flex items-center gap-1 text-xl hover:underline"
           prefetch={false}
         >
-          View All <ArrowRight className="text-primary" />
+          <span className="hidden sm:flex">
+            View All</span> <ArrowRight className="text-primary" />
         </Link>
       </div>
       <div className="w-full grid gap-2 grid-cols-2 xl:grid-cols-4">

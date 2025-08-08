@@ -19,6 +19,8 @@ import SearchBox from "./search";
 import { ModeToggle } from "@/components/ui/theme-toggle";
 import MenuIcon from "@/public/icons/menu-icon";
 import CustomAvatar from "@/components/ui/custom-avatar";
+import NotificationIcon from "@/public/icons/notification-icon";
+import Link from "next/link";
 
 const NavigationBar = () => {
   const { toggleSidebar } = useSidebar();
@@ -63,6 +65,13 @@ const NavigationBar = () => {
             <DropdownMenuItem>
               <CommentIcon />
               Comments
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild className="md:hidden flex">
+              <Link href="/notifications">
+                <NotificationIcon />
+                Notifications <span className="w-1 h-1 rounded-full bg-red-500"></span> <span className="text-sm">(4)</span>
+
+              </Link>
             </DropdownMenuItem>
             <div className="w-full my-4 flex items-center justify-center">
               <Button className="rounded-full px-9">Logout</Button>
