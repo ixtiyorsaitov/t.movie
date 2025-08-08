@@ -1,5 +1,6 @@
 "use client";
 
+import AuthModal from "@/components/modals/auth";
 import Navbar from "@/components/shared/navbar/navbar";
 import AppSidebar from "@/components/shared/sidebar/sidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
@@ -12,12 +13,13 @@ const BrowseLayout = ({ children }: { children: React.ReactNode }) => {
 
       <main className="w-full pb-[52px]">
         <Navbar />
-        <div className="w-full flex items-center justify-center">
-          <div className="flex items-center justify-center max-w-400 w-full">
+        <div className="flex w-full items-center justify-center">
+          <div className="flex w-full max-w-400 items-center justify-center">
             {children}
           </div>
         </div>
       </main>
+      <AuthModal />
     </SidebarProvider>
   );
 };

@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins, Baloo_2 } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/providers/theme-provider";
-import NextTopLoader from "nextjs-toploader";
+import Providers from "@/components/providers";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -33,18 +32,9 @@ export default function RootLayout({
     >
       <body
         suppressHydrationWarning
-        className={`${poppins.variable} ${poppins.variable} ${poppins.className} ${baloo_2.style} ${baloo_2.variable} selection:bg-primary-500 selection:text-neutral-900 antialiased dark:bg-neutral-900`}
+        className={`${poppins.variable} ${poppins.variable} ${poppins.className} ${baloo_2.style} ${baloo_2.variable} selection:bg-primary-500 antialiased selection:text-neutral-900 dark:bg-neutral-900`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <NextTopLoader showSpinner={true} color="#e7bc0f" />
-
-          {children}
-        </ThemeProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

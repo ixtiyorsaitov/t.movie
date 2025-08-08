@@ -85,7 +85,7 @@ const SearchBox = ({ autoFocus = false }: Props) => {
       </div>
       {searchPopover && (
         <div className="absolute right-0 w-full">
-          <div className="bg-popover animation-popover relative z-10 mt-3 max-h-[400px] w-full rounded-xl p-4 shadow-lg overflow-auto">
+          <div className="bg-popover animation-popover relative z-10 mt-3 max-h-[400px] w-full overflow-auto rounded-xl p-4 shadow-lg">
             <div className="absolute top-[-5px] left-[145px]">
               <DropDownArrow className="text-popover" />
             </div>

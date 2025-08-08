@@ -2,6 +2,13 @@ export enum FilmType {
   SERIES = "series",
   MOVIE = "movie",
 }
+export interface ChildProps {
+  children: React.ReactNode;
+}
+
+export interface IError extends Error {
+  response: { data: { message: string } };
+}
 
 export interface IFilm {
   _id: string;

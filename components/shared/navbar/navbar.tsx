@@ -4,7 +4,7 @@ import NavigationBar from "./navigation-bar";
 
 const Navbar = () => {
   return (
-    <div className="w-full flex items-center justify-between mt-4">
+    <div className="mt-4 flex w-full items-center justify-between md:pr-10 md:pl-7">
       <NavigationItems />
 
       <NavigationBar />
