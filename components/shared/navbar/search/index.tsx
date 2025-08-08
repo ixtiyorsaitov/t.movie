@@ -56,19 +56,19 @@ const SearchBox = ({ autoFocus = false }: Props) => {
   const handleSearchDebounce = useCallback(debounce(onInputChange, 300), []);
 
   return (
-    <div className="relative hidden lg:flex w-full" ref={wrapperRef}>
-      <div className="flex items-center justify-center w-full">
+    <div className="relative w-full" ref={wrapperRef}>
+      <div className="flex w-full items-center justify-center">
         <Button
           variant={"ghost"}
-          className="bg-popover rounded-r-none rounded-l-xl h-11 w-11"
+          className="bg-popover h-11 w-11 rounded-l-xl rounded-r-none"
           size={"icon"}
         >
           <SearchIcon className="relative left-1" />
         </Button>
         <Input
           className={cn(
-            "!bg-popover h-11 rounded-none focus-visible:ring-0 border-none shadow-none",
-            "w-full lg:w-[222px]"
+            "!bg-popover h-11 rounded-none border-none shadow-none focus-visible:ring-0",
+            "w-full lg:w-[222px]",
           )}
           placeholder="Search the series, movies..."
           onFocus={() => setSearchPopover(true)}
@@ -77,19 +77,19 @@ const SearchBox = ({ autoFocus = false }: Props) => {
         />
         <Button
           variant={"ghost"}
-          className="bg-popover rounded-l-none rounded-r-xl h-11 w-11"
+          className="bg-popover h-11 w-11 rounded-l-none rounded-r-xl"
           size={"icon"}
         >
-          <FilterIcon className="relative right-1 !w-5 !h-5" />
+          <FilterIcon className="relative right-1 !h-5 !w-5" />
         </Button>
       </div>
       {searchPopover && (
-        <div className="absolute w-full right-0">
-          <div className="w-full bg-popover mt-3 rounded-xl shadow-lg z-10 animation-popover relative p-4">
-            <div className="absolute left-[145px] top-[-5px]">
+        <div className="absolute right-0 w-full">
+          <div className="bg-popover animation-popover relative z-10 mt-3 max-h-[400px] w-full rounded-xl p-4 shadow-lg overflow-auto">
+            <div className="absolute top-[-5px] left-[145px]">
               <DropDownArrow className="text-popover" />
             </div>
-            <div className="w-full text-[12px] flex items-center justify-between">
+            <div className="flex w-full items-center justify-between text-[12px]">
               <p className="mx-2">
                 {result.length === 0 ? "Recommended" : "Your search result"}
               </p>

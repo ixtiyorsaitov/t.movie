@@ -21,6 +21,7 @@ import MenuIcon from "@/public/icons/menu-icon";
 import CustomAvatar from "@/components/ui/custom-avatar";
 import NotificationIcon from "@/public/icons/notification-icon";
 import Link from "next/link";
+import MobileSearch from "./mobile-search";
 
 const NavigationBar = () => {
   const { toggleSidebar } = useSidebar();
@@ -28,6 +29,9 @@ const NavigationBar = () => {
     <div className="flex items-center justify-end gap-2">
       <div className="lg:flex hidden">
         <SearchBox />
+      </div>
+      <div className="lg:hidden">
+        <MobileSearch />
       </div>
 
       <ModeToggle />
@@ -69,8 +73,9 @@ const NavigationBar = () => {
             <DropdownMenuItem asChild className="md:hidden flex">
               <Link href="/notifications">
                 <NotificationIcon />
-                Notifications <span className="w-1 h-1 rounded-full bg-red-500"></span> <span className="text-sm">(4)</span>
-
+                Notifications{" "}
+                <span className="w-1 h-1 rounded-full bg-red-500"></span>{" "}
+                <span className="text-sm">(4)</span>
               </Link>
             </DropdownMenuItem>
             <div className="w-full my-4 flex items-center justify-center">
